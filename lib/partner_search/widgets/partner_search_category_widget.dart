@@ -17,6 +17,7 @@ class PartnerSearchCategoryWidget extends StatelessWidget {
             style: TextStyle(fontWeight: FontWeight.w700, color: BringColor.primaryNavy, fontSize: 24),
           ),
         ),
+        const SizedBox(height: 8),
         GridView.builder(
             physics: const NeverScrollableScrollPhysics(),
             shrinkWrap: true,

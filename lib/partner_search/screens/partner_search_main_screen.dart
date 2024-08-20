@@ -22,7 +22,9 @@ class _PartnerSearchMainScreenState extends State<PartnerSearchMainScreen> {
             child: Column(
               children: [
                 searchTextField(),
+                const SizedBox(height: 32),
                 PartnerSearchCategoryWidget(),
+                const SizedBox(height: 32),
                 PartnerSearchRealtimeIdeaList(),
               ],
             ),
