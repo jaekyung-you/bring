@@ -1,6 +1,10 @@
 import 'package:bring/const/app_config.dart';
 import 'package:bring/const/theme.dart';
+import 'package:bring/routes/bring_routes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../../routes/bring_path.dart';
 
 class PartnerSearchCategoryWidget extends StatelessWidget {
   const PartnerSearchCategoryWidget({super.key});
@@ -28,17 +32,22 @@ class PartnerSearchCategoryWidget extends StatelessWidget {
             ),
             itemCount: 9,
             itemBuilder: (context, index) {
-              return Container(
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(AppConfig.borderRadiusMain),
-                  color: BringColor.primaryGrey,
-                ),
-                child: Text(
-                  'Category ${index}',
-                  style: TextStyle(
-                    color: BringColor.primaryNavy,
-                    fontWeight: FontWeight.w500,
+              return InkWell(
+                onTap: () {
+                  Get.toNamed(BringPath.PARTNER_SEARCH_CATEGORY, arguments: {'category': index.toString()});
+                },
+                child: Container(
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(AppConfig.borderRadiusMain),
+                    color: BringColor.primaryGrey,
+                  ),
+                  child: Text(
+                    'Category ${index}',
+                    style: TextStyle(
+                      color: BringColor.primaryNavy,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                 ),
               );
