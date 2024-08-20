@@ -1,4 +1,7 @@
+import 'package:bring/partner_search/widgets/realtime_item.dart';
+import 'package:bring/routes/bring_path.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../../const/app_config.dart';
 import '../../const/theme.dart';
 
@@ -14,15 +17,20 @@ class PartnerSearchRealtimeIdeaList extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: AppConfig.contentPadding),
           child: Row(
             children: [
-              Text(
+              const Text(
                 '실시간 아이디어',
                 style: TextStyle(fontWeight: FontWeight.w700, color: BringColor.primaryNavy, fontSize: 24),
               ),
               const Spacer(),
-              Icon(
-                Icons.arrow_forward_ios,
-                size: 24,
-                color: BringColor.primaryNavy,
+              InkWell(
+                onTap: () {
+                  Get.toNamed(BringPath.PARTNER_SEARCH_REALTIME_IDEA);
+                },
+                child: const Icon(
+                  Icons.arrow_forward_ios,
+                  size: 24,
+                  color: BringColor.primaryNavy,
+                ),
               )
             ],
           ),
@@ -36,61 +44,9 @@ class PartnerSearchRealtimeIdeaList extends StatelessWidget {
               return SizedBox(height: 8);
             },
             itemBuilder: (context, index) {
-              return realTimeItem();
+              return RealtimeItem();
             })
       ],
-    );
-  }
-
-  // Model
-  Widget realTimeItem() {
-    return Container(
-      height: 80,
-      padding: const EdgeInsets.all(AppConfig.contentPadding),
-      decoration: BoxDecoration(
-        color: BringColor.primaryGrey,
-        borderRadius: BorderRadius.circular(AppConfig.borderRadiusMain),
-      ),
-      child: Column(
-        // mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                '타이틀',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500, color: BringColor.primaryNavy),
-              ),
-              Text(
-                '날짜',
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500,
-                  color: BringColor.grey01,
-                ),
-              ),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                '내용',
-                style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: BringColor.grey01),
-              ),
-              Text(
-                '댓글',
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500,
-                  color: BringColor.grey01,
-                ),
-              ),
-            ],
-          ),
-        ],
-      ),
     );
   }
 }

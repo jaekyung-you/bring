@@ -3,6 +3,7 @@ import 'package:bring/consult_business/screens/consult_business_main_screen.dart
 import 'package:bring/funding_request/screens/funding_request_main_screen.dart';
 import 'package:bring/my_profile/screens/my_profile_main_screen.dart';
 import 'package:bring/partner_search/screens/partner_search_main_screen.dart';
+import 'package:bring/routes/bring_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple), useMaterial3: true, fontFamily: "Pretendard"),
       home: const MyHomePage(),
+      getPages: BringRoutes.routes,
     );
   }
 }
