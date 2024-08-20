@@ -22,12 +22,20 @@ class RealtimeItem extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                '타이틀',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500, color: BringColor.primaryNavy),
+              Expanded(
+                child: Text(
+                  '타이틀타이틀타이틀타이틀타이틀타이틀타이틀타이틀타이틀타이틀타이틀타이틀타이틀',
+                  maxLines: 1,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w500,
+                    color: BringColor.primaryNavy,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
               ),
               Text(
-                '날짜',
+                '08-21 17:30',
                 style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w500,
@@ -36,21 +44,38 @@ class RealtimeItem extends StatelessWidget {
               ),
             ],
           ),
+          const SizedBox(height: AppConfig.contentPadding),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                '내용',
-                style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: BringColor.grey01),
-              ),
-              Text(
-                '댓글',
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500,
-                  color: BringColor.grey01,
+              Expanded(
+                child: Text(
+                  '내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용',
+                  maxLines: 1,
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                    color: BringColor.grey01,
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 ),
               ),
+              Row(
+                children: [
+                  Icon(
+                    Icons.chat_outlined,
+                    size: 20,
+                  ),
+                  Text(
+                    '1',
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500,
+                      color: BringColor.grey01,
+                    ),
+                  ),
+                ],
+              )
             ],
           ),
         ],
