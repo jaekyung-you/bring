@@ -1,9 +1,7 @@
 import 'package:bring/const/app_config.dart';
 import 'package:bring/const/theme.dart';
-import 'package:bring/routes/bring_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../routes/bring_path.dart';
 
 class PartnerSearchCategoryWidget extends StatelessWidget {
