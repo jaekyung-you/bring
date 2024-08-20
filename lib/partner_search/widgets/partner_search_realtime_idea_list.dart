@@ -41,7 +41,7 @@ class PartnerSearchRealtimeIdeaList extends StatelessWidget {
             physics: const NeverScrollableScrollPhysics(),
             itemCount: 10,
             separatorBuilder: (context, index) {
-              return SizedBox(height: 8);
+              return SizedBox(height: AppConfig.innerPadding);
             },
             itemBuilder: (context, index) {
               return RealtimeItem();

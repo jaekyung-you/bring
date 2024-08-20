@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../const/app_config.dart';
 import '../../const/theme.dart';
+import '../../util/number_formatter.dart';
 
 class RealtimeItem extends StatelessWidget {
   const RealtimeItem({super.key});
@@ -64,10 +65,11 @@ class RealtimeItem extends StatelessWidget {
                 children: [
                   Icon(
                     Icons.chat_outlined,
-                    size: 20,
+                    size: 16,
+                    color: BringColor.grey01,
                   ),
                   Text(
-                    '1',
+                    NumberFormatter().formatNumberWithPlus(100),
                     style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w500,

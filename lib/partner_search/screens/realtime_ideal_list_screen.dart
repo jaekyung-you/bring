@@ -21,7 +21,7 @@ class RealtimeIdealListScreen extends StatelessWidget {
                   shrinkWrap: true,
                   itemCount: 10,
                   separatorBuilder: (context, index) {
-                    return SizedBox(height: 8);
+                    return const SizedBox(height: AppConfig.innerPadding);
                   },
                   itemBuilder: (context, index) {
                     return RealtimeItem();
