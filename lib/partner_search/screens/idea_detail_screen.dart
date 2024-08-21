@@ -1,8 +1,12 @@
 import 'package:bring/common/bring_header.dart';
+import 'package:bring/const/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../common/base_round_button.dart';
+import '../../common/divider_widget.dart';
 import '../../common/image_page_view.dart';
+import '../../const/app_config.dart';
 import '../controllers/item_detail_controller.dart';
 
 class IdeaDetailScreen extends StatelessWidget {
@@ -14,30 +18,123 @@ class IdeaDetailScreen extends StatelessWidget {
 
     return Scaffold(
       body: SafeArea(
-        child: Column(
+        child: Stack(
+          alignment: Alignment.bottomCenter,
           children: [
-            BringHeader(title: '상세화면'),
-            // 이미지 페이징뷰
-            ImagePageView(imageList: controller.imageList, height: 300),
-            // 제목
-            Text(
-              '타이틀',
-            )
+            SingleChildScrollView(
+              child: Column(
+                children: [
+                  BringHeader(title: '상세화면'),
+                  // 이미지 페이징뷰
+                  ImagePageView(imageList: controller.imageList, height: 300),
+                  // 제목
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: AppConfig.innerPadding),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          '타이틀타이틀타이틀타이틀타이틀타이틀타이틀',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w700,
+                            fontSize: 24,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: AppConfig.contentPadding,
+                        ),
+                        Text(
+                          '2024-08-21',
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: BringColor.grey01,
+                          ),
+                        ),
 
-            // 비전, 목표
+                        DividerWidget(),
+                        // 비전, 목표
+                        subTitleWidget(image: '', title: '우리 비전이에요'),
+                        Text(
+                          '비전: 비전 블라블라_블라_비전 블라블라_블라_비전 블라블라_블라_비전 블라블라_블라_비전 블라블라_블라_비전 블라블라_블라_비전 블라블라_블라_',
+                          style: TextStyle(
+                            fontSize: 16,
+                          ),
+                        ),
 
-            // 팀원 구성
+                        DividerWidget(),
+                        // 팀원 구성
+                        subTitleWidget(image: '', title: '우리 구성원이에요'),
+                        Text(
+                          '팀원 구성: 팀원 블라블라_팀원 블라블라_팀원 블라블라_팀원 블라블라_팀원 블라블라_팀원 블라블라_',
+                          style: TextStyle(
+                            fontSize: 16,
+                          ),
+                        ),
+                        DividerWidget(),
 
-            // 이런 사람 구해요
-
-            // 장소
-
-            // 연락처
+                        // 이런 사람 구해요
+                        subTitleWidget(image: '', title: '이런 분 구해요'),
+                        Text(
+                          '이런 사람 구해요: 팀원 블라블라_팀원 블라블라_팀원 블라블라_팀원 블라블라_팀원 블라블라_팀원 블라블라_',
+                          style: TextStyle(
+                            fontSize: 16,
+                          ),
+                        ),
+                        DividerWidget(),
+                        // 장소
+                        subTitleWidget(image: '', title: '우리 장소에요'),
+                        Text(
+                          '장소: 강남구 선릉로 402 104호, 패스트파이브',
+                          style: TextStyle(
+                            fontSize: 16,
+                          ),
+                        ),
+                        const SizedBox(height: 100),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
 
             // 플로팅 버튼: 채팅하기 + 찜
+            Row(
+              children: [
+                const SizedBox(width: AppConfig.innerPadding),
+                Expanded(
+                    child: BaseRoundButton(
+                        buttonText: '채팅하기', onPress: () {}, buttonFgColor: Colors.white, buttonBgColor: BringColor.primaryNavy)),
+                SizedBox(
+                  height: 64,
+                  width: 64,
+                  child: IconButton(onPressed: () {}, icon: Icon(Icons.heart_broken)),
+                )
+              ],
+            )
           ],
         ),
       ),
+    );
+  }
+
+  Widget subTitleWidget({required String image, required String title}) {
+    return Row(
+      children: [
+        Container(
+          color: Colors.blue,
+          width: 32,
+          height: 32,
+        ),
+        // Image.asset('assets/images/$image.png'),
+        const SizedBox(width: AppConfig.contentPadding),
+        Text(
+          title,
+          style: TextStyle(
+            fontWeight: FontWeight.w600,
+            fontSize: 18,
+          ),
+        )
+      ],
     );
   }
 }
