@@ -14,9 +14,9 @@ class PartnerSearchMainScreen extends StatefulWidget {
 class _PartnerSearchMainScreenState extends State<PartnerSearchMainScreen> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Padding(
+    return Scaffold(
+      body: SafeArea(
+        child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: AppConfig.innerPadding),
           child: SingleChildScrollView(
             child: Column(
