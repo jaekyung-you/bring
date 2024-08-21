@@ -32,7 +32,7 @@ class BringHeader extends StatelessWidget {
           if (isHiddenBack) const SizedBox(width: 16),
           Text(
             title,
-            style: const TextStyle(fontWeight: FontWeight.w700, color: BringColor.primaryNavy, fontSize: 24),
+            style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 24),
           ),
         ],
       ),

@@ -33,6 +33,9 @@ class IdeaDetailScreen extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        const SizedBox(
+                          height: AppConfig.contentPadding,
+                        ),
                         Text(
                           '타이틀타이틀타이틀타이틀타이틀타이틀타이틀',
                           style: TextStyle(
@@ -43,11 +46,25 @@ class IdeaDetailScreen extends StatelessWidget {
                         const SizedBox(
                           height: AppConfig.contentPadding,
                         ),
+                        Row(
+                          children: [
+                            Text('찜 n |'),
+                            const SizedBox(width: 4),
+                            Text('채팅 n |'),
+                            const SizedBox(width: 4),
+                            Text('카테고리 |'),
+                            const Spacer(),
+                            Text('2024-08-21'),
+                          ],
+                        ),
+
+                        DividerWidget(),
+                        // 비전, 목표
+                        subTitleWidget(image: '', title: '우리 프로젝트에요'),
                         Text(
-                          '2024-08-21',
+                          '우리 프로젝트 블라블라_우리 프로젝트 블라블라_우리 프로젝트 블라블라_우리 프로젝트 블라블라_우리 프로젝트 블라블라_우리 프로젝트 블라블라_',
                           style: TextStyle(
                             fontSize: 16,
-                            color: BringColor.grey01,
                           ),
                         ),
 
@@ -62,6 +79,16 @@ class IdeaDetailScreen extends StatelessWidget {
                         ),
 
                         DividerWidget(),
+                        // 장소
+                        subTitleWidget(image: '', title: '현재 진행된 사항이에요'),
+                        Text(
+                          '현재 이런거 하고 있음 블라블라 현재 이런거 하고 있음 블라블라 현재 이런거 하고 있음 블라블라 현재 이런거 하고 있음 블라블라',
+                          style: TextStyle(
+                            fontSize: 16,
+                          ),
+                        ),
+
+                        DividerWidget(),
                         // 팀원 구성
                         subTitleWidget(image: '', title: '우리 구성원이에요'),
                         Text(
@@ -70,6 +97,7 @@ class IdeaDetailScreen extends StatelessWidget {
                             fontSize: 16,
                           ),
                         ),
+
                         DividerWidget(),
 
                         // 이런 사람 구해요
@@ -89,6 +117,17 @@ class IdeaDetailScreen extends StatelessWidget {
                             fontSize: 16,
                           ),
                         ),
+
+                        DividerWidget(),
+                        // 장소
+                        subTitleWidget(image: '', title: '기타 사항이에요'),
+                        Text(
+                          '기타 사항, 사진은 여기여기 기타 사항, 사진은 여기여기 기타 사항, 사진은 여기여기 기타 사항, 사진은 여기여기 ',
+                          style: TextStyle(
+                            fontSize: 16,
+                          ),
+                        ),
+
                         const SizedBox(height: 100),
                       ],
                     ),
@@ -132,6 +171,7 @@ class IdeaDetailScreen extends StatelessWidget {
           style: TextStyle(
             fontWeight: FontWeight.w600,
             fontSize: 18,
+            color: BringColor.primaryNavy,
           ),
         )
       ],
