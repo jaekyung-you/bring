@@ -6,9 +6,9 @@ import '../const/theme.dart';
 class BringTextField extends StatefulWidget {
   final String titleText;
   final String hintText;
-  final int maxLenth;
+  final int maxLength;
 
-  const BringTextField({super.key, required this.titleText, required this.hintText, required this.maxLenth});
+  const BringTextField({super.key, required this.titleText, required this.hintText, required this.maxLength});
 
   @override
   State<BringTextField> createState() => _BringTextFieldState();
@@ -20,7 +20,7 @@ class _BringTextFieldState extends State<BringTextField> {
   @override
   Widget build(BuildContext context) {
     return TextField(
-      maxLength: widget.maxLenth,
+      maxLength: widget.maxLength,
       decoration: InputDecoration(
         counterText: '',
         hintText: widget.hintText,
@@ -40,6 +40,9 @@ class _BringTextFieldState extends State<BringTextField> {
           borderSide: BorderSide(color: BringColor.red),
         ),
       ),
+      onTapOutside: (PointerDownEvent event) {
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
     );
   }
 }
