@@ -21,119 +21,125 @@ class IdeaDetailScreen extends StatelessWidget {
         child: Stack(
           alignment: Alignment.bottomCenter,
           children: [
-            SingleChildScrollView(
-              child: Column(
-                children: [
-                  BringHeader(title: '상세화면'),
-                  // 이미지 페이징뷰
-                  ImagePageView(imageList: controller.imageList, height: 300),
-                  // 제목
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: AppConfig.innerPadding),
+            Column(
+              children: [
+                const BringHeader(title: '상세화면'),
+                Expanded(
+                  child: SingleChildScrollView(
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const SizedBox(
-                          height: AppConfig.contentPadding,
-                        ),
-                        Text(
-                          '타이틀타이틀타이틀타이틀타이틀타이틀타이틀',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w700,
-                            fontSize: 24,
-                          ),
-                        ),
-                        const SizedBox(
-                          height: AppConfig.contentPadding,
-                        ),
-                        Row(
-                          children: [
-                            Text('찜 n |'),
-                            const SizedBox(width: 4),
-                            Text('채팅 n |'),
-                            const SizedBox(width: 4),
-                            Text('카테고리 |'),
-                            const Spacer(),
-                            Text('2024-08-21'),
-                          ],
-                        ),
+                        // 이미지 페이징뷰
+                        ImagePageView(imageList: controller.imageList, height: 300),
+                        // 제목
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: AppConfig.innerPadding),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const SizedBox(
+                                height: AppConfig.contentPadding,
+                              ),
+                              Text(
+                                '타이틀타이틀타이틀타이틀타이틀타이틀타이틀',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 24,
+                                ),
+                              ),
+                              const SizedBox(
+                                height: AppConfig.contentPadding,
+                              ),
+                              Row(
+                                children: [
+                                  Text('찜 n |'),
+                                  const SizedBox(width: 4),
+                                  Text('채팅 n |'),
+                                  const SizedBox(width: 4),
+                                  Text('카테고리 |'),
+                                  const Spacer(),
+                                  Text('2024-08-21'),
+                                ],
+                              ),
 
-                        DividerWidget(),
-                        // 비전, 목표
-                        subTitleWidget(image: '', title: '우리 프로젝트에요'),
-                        Text(
-                          '우리 프로젝트 블라블라_우리 프로젝트 블라블라_우리 프로젝트 블라블라_우리 프로젝트 블라블라_우리 프로젝트 블라블라_우리 프로젝트 블라블라_',
-                          style: TextStyle(
-                            fontSize: 16,
-                          ),
-                        ),
+                              DividerWidget(),
+                              // 비전, 목표
+                              subTitleWidget(image: '', title: '우리 프로젝트에요'),
+                              Text(
+                                '우리 프로젝트 블라블라_우리 프로젝트 블라블라_우리 프로젝트 블라블라_우리 프로젝트 블라블라_우리 프로젝트 블라블라_우리 프로젝트 블라블라_',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                ),
+                              ),
 
-                        DividerWidget(),
-                        // 비전, 목표
-                        subTitleWidget(image: '', title: '우리 비전이에요'),
-                        Text(
-                          '비전: 비전 블라블라_블라_비전 블라블라_블라_비전 블라블라_블라_비전 블라블라_블라_비전 블라블라_블라_비전 블라블라_블라_비전 블라블라_블라_',
-                          style: TextStyle(
-                            fontSize: 16,
-                          ),
-                        ),
+                              DividerWidget(),
+                              // 비전, 목표
+                              subTitleWidget(image: '', title: '우리 비전이에요'),
+                              Text(
+                                '비전: 비전 블라블라_블라_비전 블라블라_블라_비전 블라블라_블라_비전 블라블라_블라_비전 블라블라_블라_비전 블라블라_블라_비전 블라블라_블라_',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                ),
+                              ),
 
-                        DividerWidget(),
-                        // 장소
-                        subTitleWidget(image: '', title: '현재 진행된 사항이에요'),
-                        Text(
-                          '현재 이런거 하고 있음 블라블라 현재 이런거 하고 있음 블라블라 현재 이런거 하고 있음 블라블라 현재 이런거 하고 있음 블라블라',
-                          style: TextStyle(
-                            fontSize: 16,
-                          ),
-                        ),
+                              DividerWidget(),
+                              // 장소
+                              subTitleWidget(image: '', title: '현재 진행된 사항이에요'),
+                              Text(
+                                '현재 이런거 하고 있음 블라블라 현재 이런거 하고 있음 블라블라 현재 이런거 하고 있음 블라블라 현재 이런거 하고 있음 블라블라',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                ),
+                              ),
 
-                        DividerWidget(),
-                        // 팀원 구성
-                        subTitleWidget(image: '', title: '우리 구성원이에요'),
-                        Text(
-                          '팀원 구성: 팀원 블라블라_팀원 블라블라_팀원 블라블라_팀원 블라블라_팀원 블라블라_팀원 블라블라_',
-                          style: TextStyle(
-                            fontSize: 16,
-                          ),
-                        ),
+                              DividerWidget(),
+                              // 팀원 구성
+                              subTitleWidget(image: '', title: '우리 구성원이에요'),
+                              Text(
+                                '팀원 구성: 팀원 블라블라_팀원 블라블라_팀원 블라블라_팀원 블라블라_팀원 블라블라_팀원 블라블라_',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                ),
+                              ),
 
-                        DividerWidget(),
+                              DividerWidget(),
 
-                        // 이런 사람 구해요
-                        subTitleWidget(image: '', title: '이런 분 구해요'),
-                        Text(
-                          '이런 사람 구해요: 팀원 블라블라_팀원 블라블라_팀원 블라블라_팀원 블라블라_팀원 블라블라_팀원 블라블라_',
-                          style: TextStyle(
-                            fontSize: 16,
-                          ),
-                        ),
-                        DividerWidget(),
-                        // 장소
-                        subTitleWidget(image: '', title: '우리 장소에요'),
-                        Text(
-                          '장소: 강남구 선릉로 402 104호, 패스트파이브',
-                          style: TextStyle(
-                            fontSize: 16,
-                          ),
-                        ),
+                              // 이런 사람 구해요
+                              subTitleWidget(image: '', title: '이런 분 구해요'),
+                              Text(
+                                '이런 사람 구해요: 팀원 블라블라_팀원 블라블라_팀원 블라블라_팀원 블라블라_팀원 블라블라_팀원 블라블라_',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                ),
+                              ),
+                              DividerWidget(),
+                              // 장소
+                              subTitleWidget(image: '', title: '우리 장소에요'),
+                              Text(
+                                '장소: 강남구 선릉로 402 104호, 패스트파이브',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                ),
+                              ),
 
-                        DividerWidget(),
-                        // 장소
-                        subTitleWidget(image: '', title: '기타 사항이에요'),
-                        Text(
-                          '기타 사항, 사진은 여기여기 기타 사항, 사진은 여기여기 기타 사항, 사진은 여기여기 기타 사항, 사진은 여기여기 ',
-                          style: TextStyle(
-                            fontSize: 16,
-                          ),
-                        ),
+                              DividerWidget(),
+                              // 장소
+                              subTitleWidget(image: '', title: '기타 사항이에요'),
+                              Text(
+                                '기타 사항, 사진은 여기여기 기타 사항, 사진은 여기여기 기타 사항, 사진은 여기여기 기타 사항, 사진은 여기여기 ',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                ),
+                              ),
 
-                        const SizedBox(height: 100),
+                              const SizedBox(height: 100),
+                            ],
+                          ),
+                        )
                       ],
                     ),
-                  )
-                ],
-              ),
+                  ),
+                ),
+              ],
             ),
 
             // 플로팅 버튼: 채팅하기 + 찜

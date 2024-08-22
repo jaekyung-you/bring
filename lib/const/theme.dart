@@ -1,7 +1,6 @@
 import 'dart:ui';
 
 class BringColor {
-
   static const primaryNavy = Color(0xff233B6E);
   static const navy01 = Color(0xff201E43);
   static const navy02 = Color(0xff1C3879);
@@ -16,4 +15,6 @@ class BringColor {
   static const grey05 = Color(0xffD3D6DB);
 
   static const primaryWhite = Color(0xfffff8f3);
+
+  static const red = Color(0xffff2400);
 }
