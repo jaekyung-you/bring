@@ -1,8 +1,10 @@
 import 'package:bring/common/base_round_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../const/app_config.dart';
+import '../const/theme.dart';
 
 class BringDialog extends StatefulWidget {
   String title;
@@ -10,11 +12,9 @@ class BringDialog extends StatefulWidget {
   Widget? content;
   String firstButtonText;
   String? secondButtonText;
-
   // String? thirdButtonText;
   Function? onPressFirstButton;
   Function? onPressSecondButton;
-
   // Function? onPressThirdButton;
 
   // 버튼 1개
@@ -79,7 +79,7 @@ class _BringDialogState extends State<BringDialog> {
             /// 제목
             Text(
               widget.title,
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),
             ),
 
             /// 내용
@@ -88,7 +88,7 @@ class _BringDialogState extends State<BringDialog> {
                 padding: const EdgeInsets.symmetric(vertical: AppConfig.contentPadding),
                 child: Text(
                   widget.desc!,
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+                  style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w500),
                 ),
               ),
 
@@ -110,7 +110,7 @@ class _BringDialogState extends State<BringDialog> {
                       }
                     },
                     buttonFgColor: Colors.white,
-                    buttonBgColor: Colors.black,
+                    buttonBgColor: BringColor.primaryNavy,
                     height: 50,
                   ),
                 ),
@@ -126,7 +126,7 @@ class _BringDialogState extends State<BringDialog> {
                           }
                         },
                         buttonFgColor: Colors.white,
-                        buttonBgColor: Colors.black,
+                        buttonBgColor: BringColor.primaryNavy.withOpacity(0.5),
                         height: 50,
                       ),
                     ),

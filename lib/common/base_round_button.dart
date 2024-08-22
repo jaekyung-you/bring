@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../const/app_config.dart';
 
 class BaseRoundButton extends StatefulWidget {
@@ -89,7 +90,7 @@ class _BaseRoundButtonState extends State<BaseRoundButton> with SingleTickerProv
               if (widget.prefixIcon != null) Padding(padding: const EdgeInsets.only(left: 4.0), child: widget.prefixIcon!),
               Text(
                 widget.buttonText,
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500, color: widget.buttonFgColor),
+                style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w500, color: widget.buttonFgColor),
               ),
               if (widget.suffixIcon != null) Padding(padding: const EdgeInsets.only(right: 4.0), child: widget.suffixIcon!),
             ],

@@ -5,8 +5,9 @@ class BringHeader extends StatelessWidget {
   final String title;
   final bool isHiddenBack;
   final Function? onTapBackButton;
+  final Widget? rightButton;
 
-  const BringHeader({super.key, required this.title, this.isHiddenBack = false, this.onTapBackButton});
+  const BringHeader({super.key, required this.title, this.isHiddenBack = false, this.onTapBackButton, this.rightButton});
 
   @override
   Widget build(BuildContext context) {
@@ -39,6 +40,8 @@ class BringHeader extends StatelessWidget {
             title,
             style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 24),
           ),
+          if (rightButton != null) const Spacer(),
+          if (rightButton != null) SizedBox(height: 48, width: 60, child: rightButton!)
         ],
       ),
     );

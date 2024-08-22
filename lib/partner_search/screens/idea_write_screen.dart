@@ -1,14 +1,19 @@
-import 'package:bring/common/bring_dialog.dart';
 import 'package:bring/common/bring_header.dart';
+import 'package:bring/partner_search/controllers/idea_write_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
 import '../../common/bring_textfield.dart';
 import '../../common/bring_textformfield.dart';
 import '../../const/app_config.dart';
 
-class IdeaWriteScreen extends StatelessWidget {
+class IdeaWriteScreen extends StatefulWidget {
   const IdeaWriteScreen({super.key});
+
+  @override
+  State<IdeaWriteScreen> createState() => _IdeaWriteScreenState();
+}
+
+class _IdeaWriteScreenState extends State<IdeaWriteScreen> {
+  final IdeaWriteController controller = IdeaWriteController();
 
   @override
   Widget build(BuildContext context) {
@@ -18,13 +23,16 @@ class IdeaWriteScreen extends StatelessWidget {
           children: [
             BringHeader(
               title: '아이디어 작성',
+              rightButton: TextButton(
+                  onPressed: () {
+                    controller.onTapRegisterButton();
+                  },
+                  child: Text(
+                    '등록',
+                    style: TextStyle(fontSize: 16),
+                  )),
               onTapBackButton: () {
-                Get.dialog(BringDialog.twoButton(
-                  title: '알림',
-                  desc: '작성을 취소하시겠어요?',
-                  firstButtonText: '예',
-                  secondButtonText: '아니오',
-                ));
+                controller.onTapBackButton();
               },
             ),
             Expanded(
