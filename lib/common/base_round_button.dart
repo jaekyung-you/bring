@@ -74,7 +74,7 @@ class _BaseRoundButtonState extends State<BaseRoundButton> with SingleTickerProv
       child: Transform.scale(
         scale: _scale,
         child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: AppConfig.contentPadding, vertical: AppConfig.innerPadding),
+          padding: const EdgeInsets.symmetric(horizontal: AppConfig.contentPadding),
           width: widget.width,
           height: widget.height,
           alignment: Alignment.center,
