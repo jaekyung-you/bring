@@ -44,7 +44,7 @@ class PartnerSearchCategoryWidget extends StatelessWidget {
                   ),
                   child: Text(
                     'Category ${index}',
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: BringColor.primaryNavy,
                       fontWeight: FontWeight.w500,
                     ),

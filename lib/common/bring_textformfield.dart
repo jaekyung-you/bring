@@ -15,7 +15,7 @@ class BringTextformfield extends StatefulWidget {
 }
 
 class _BringTextformfieldState extends State<BringTextformfield> {
-  final BorderRadius borderRadius = BorderRadius.circular(AppConfig.borderRadiusSub);
+  final BorderRadius borderRadius = BorderRadius.circular(AppConfig.borderRadiusMain);
 
   @override
   Widget build(BuildContext context) {
@@ -26,19 +26,19 @@ class _BringTextformfieldState extends State<BringTextformfield> {
         alignLabelWithHint: true,
         // labelText를 입력 필드의 상단에 고정
         labelText: widget.titleText,
-        labelStyle: TextStyle(color: BringColor.grey02),
-        hintStyle: TextStyle(color: BringColor.grey02),
+        labelStyle: const TextStyle(color: BringColor.grey02),
+        hintStyle: const TextStyle(color: BringColor.grey02),
         enabledBorder: OutlineInputBorder(
           borderRadius: borderRadius,
-          borderSide: BorderSide(color: BringColor.grey01),
+          borderSide: const BorderSide(color: BringColor.grey01),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: borderRadius,
-          borderSide: BorderSide(color: BringColor.navy02),
+          borderSide: const BorderSide(color: BringColor.navy02),
         ),
         errorBorder: OutlineInputBorder(
           borderRadius: borderRadius,
-          borderSide: BorderSide(color: BringColor.red),
+          borderSide: const BorderSide(color: BringColor.red),
         ),
       ),
       onTapOutside: (PointerDownEvent event) {

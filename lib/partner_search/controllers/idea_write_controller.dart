@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import '../../common/bring_dialog.dart';
 
 class IdeaWriteController extends GetxController {
-
   void onTapRegisterButton() {
     Get.dialog(BringDialog.twoButton(
       title: '알림',
@@ -13,7 +12,7 @@ class IdeaWriteController extends GetxController {
         Get.back();
         Get.back();
       },
-      secondButtonText: '잠시만요!',
+      secondButtonText: '잠시만요.',
       onPressSecondButton: () {
         Get.back();
       },
@@ -29,7 +28,7 @@ class IdeaWriteController extends GetxController {
         Get.back();
         Get.back();
       },
-      secondButtonText: '잠시만요!',
+      secondButtonText: '잠시만요.',
       onPressSecondButton: () {
         Get.back();
       },

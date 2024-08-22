@@ -1,4 +1,6 @@
+import 'package:bring/common/base_round_button.dart';
 import 'package:bring/common/bring_header.dart';
+import 'package:bring/const/theme.dart';
 import 'package:bring/partner_search/controllers/idea_write_controller.dart';
 import 'package:flutter/material.dart';
 import '../../common/bring_textfield.dart';
@@ -92,7 +94,22 @@ class _IdeaWriteScreenState extends State<IdeaWriteScreen> {
                         ),
                         const SizedBox(height: AppConfig.innerPadding),
                         Text('이미지 첨부 기능'),
-                        Text('등록하기'),
+                        Container(
+                          height: 200,
+                          decoration: BoxDecoration(
+                              border: Border.all(color: BringColor.grey01),
+                              borderRadius: BorderRadius.circular(AppConfig.borderRadiusMain)),
+                        ),
+                        const SizedBox(height: AppConfig.innerPadding),
+                        BaseRoundButton(
+                          buttonText: '등록하기',
+                          onPressed: () {
+                            controller.onTapRegisterButton();
+                          },
+                          buttonBgColor: BringColor.primaryNavy,
+                          buttonFgColor: Colors.white,
+                        ),
+                        const SizedBox(height: AppConfig.innerPadding * 2),
                       ],
                     ),
                   ),

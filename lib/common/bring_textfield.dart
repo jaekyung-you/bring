@@ -15,7 +15,7 @@ class BringTextField extends StatefulWidget {
 }
 
 class _BringTextFieldState extends State<BringTextField> {
-  final BorderRadius borderRadius = BorderRadius.circular(AppConfig.borderRadiusSub);
+  final BorderRadius borderRadius = BorderRadius.circular(AppConfig.borderRadiusMain);
 
   @override
   Widget build(BuildContext context) {
@@ -25,19 +25,19 @@ class _BringTextFieldState extends State<BringTextField> {
         counterText: '',
         hintText: widget.hintText,
         labelText: widget.titleText,
-        labelStyle: TextStyle(color: BringColor.grey02),
-        hintStyle: TextStyle(color: BringColor.grey02),
+        labelStyle: const TextStyle(color: BringColor.grey02),
+        hintStyle: const TextStyle(color: BringColor.grey02),
         enabledBorder: OutlineInputBorder(
           borderRadius: borderRadius,
-          borderSide: BorderSide(color: BringColor.grey01),
+          borderSide: const BorderSide(color: BringColor.grey01),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: borderRadius,
-          borderSide: BorderSide(color: BringColor.navy02),
+          borderSide: const BorderSide(color: BringColor.navy02),
         ),
         errorBorder: OutlineInputBorder(
           borderRadius: borderRadius,
-          borderSide: BorderSide(color: BringColor.red),
+          borderSide: const BorderSide(color: BringColor.red),
         ),
       ),
       onTapOutside: (PointerDownEvent event) {
