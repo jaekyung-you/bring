@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../routes/bring_path.dart';
+import '../session.dart';
 
 class IdeaWriteButton extends StatelessWidget {
   const IdeaWriteButton({super.key});
@@ -13,13 +14,18 @@ class IdeaWriteButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return BouncingWidget(
       onPressed: () {
+        if (!Session().isLogined) {
+          Get.toNamed(BringPath.LOGIN);
+          return;
+        }
+
         Get.toNamed(BringPath.IDEA_WRITE);
       },
       child: Container(
         width: 64,
         height: 64,
         decoration: BoxDecoration(color: BringColor.primaryNavy, borderRadius: BorderRadius.circular(AppConfig.borderRadiusMain)),
-        child: Icon(
+        child: const Icon(
           Icons.edit,
           color: Colors.white,
           size: 32,

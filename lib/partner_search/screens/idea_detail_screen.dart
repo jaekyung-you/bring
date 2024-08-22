@@ -113,7 +113,26 @@ class IdeaDetailScreen extends StatelessWidget {
                               ),
                               DividerWidget(),
                               // 장소
-                              subTitleWidget(image: '', title: '우리 장소에요'),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  subTitleWidget(image: '', title: '우리 장소에요'),
+                                  Spacer(),
+                                  InkWell(
+                                    onTap: () {
+                                      // todo: 구글지도 연결
+                                    },
+                                    child: Container(
+                                      width: 30,
+                                      height: 30,
+                                      child: Icon(
+                                        Icons.arrow_forward_ios,
+                                        size: 16,
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
                               Text(
                                 '장소: 강남구 선릉로 402 104호, 패스트파이브',
                                 style: TextStyle(

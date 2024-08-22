@@ -1,4 +1,5 @@
 import 'package:bring/main.dart';
+import 'package:bring/my_profile/screens/login_screen.dart';
 import 'package:bring/routes/bring_path.dart';
 import 'package:get/get.dart';
 
@@ -24,5 +25,7 @@ class BringRoutes {
     GetPage(name: BringPath.PARTNER_SEARCH_REALTIME_IDEA, page: () => const RealtimeIdealListScreen()),
     GetPage(name: BringPath.IDEA_DETAIL, page: () => const IdeaDetailScreen()),
     GetPage(name: BringPath.IDEA_WRITE, page: () => const IdeaWriteScreen()),
+
+    GetPage(name: BringPath.LOGIN, page: () => const LoginScreen()),
   ];
 }

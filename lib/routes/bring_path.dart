@@ -7,4 +7,6 @@ class BringPath {
 
   static const IDEA_DETAIL = '/idea_detail'; // 아이디어 상세화면
   static const IDEA_WRITE = '/idea_write'; // 아이디어 작성화면
+
+  static const LOGIN = '/login'; // 아이디어 작성화면
 }
