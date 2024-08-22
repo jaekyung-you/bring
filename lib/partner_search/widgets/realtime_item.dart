@@ -1,5 +1,5 @@
+import 'package:bring/common/bouncing_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:get/get.dart';
 
 import '../../const/app_config.dart';
@@ -12,8 +12,8 @@ class RealtimeItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
+    return BouncingWidget(
+      onPressed: () {
         Get.toNamed(BringPath.IDEA_DETAIL);
       },
       child: Container(

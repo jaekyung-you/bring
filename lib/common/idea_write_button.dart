@@ -1,3 +1,4 @@
+import 'package:bring/common/bouncing_widget.dart';
 import 'package:bring/const/app_config.dart';
 import 'package:bring/const/theme.dart';
 import 'package:flutter/material.dart';
@@ -10,8 +11,8 @@ class IdeaWriteButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
+    return BouncingWidget(
+      onPressed: () {
         Get.toNamed(BringPath.IDEA_WRITE);
       },
       child: Container(

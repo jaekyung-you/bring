@@ -6,6 +6,7 @@ import '../../common/base_round_button.dart';
 import '../../common/divider_widget.dart';
 import '../../common/image_page_view.dart';
 import '../../const/app_config.dart';
+import '../../routes/bring_path.dart';
 import '../controllers/item_detail_controller.dart';
 
 class IdeaDetailScreen extends StatelessWidget {
@@ -141,7 +142,7 @@ class IdeaDetailScreen extends StatelessWidget {
                 const SizedBox(width: AppConfig.innerPadding),
                 Expanded(
                     child: BaseRoundButton(
-                        buttonText: '채팅하기', onPress: () {}, buttonFgColor: Colors.white, buttonBgColor: BringColor.primaryNavy)),
+                        buttonText: '채팅하기', onPressed: () {}, buttonFgColor: Colors.white, buttonBgColor: BringColor.primaryNavy)),
                 SizedBox(
                   height: 64,
                   width: 64,

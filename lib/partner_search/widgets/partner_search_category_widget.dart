@@ -3,6 +3,7 @@ import 'package:bring/const/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:get/get.dart';
+import '../../common/bouncing_widget.dart';
 import '../../routes/bring_path.dart';
 
 class PartnerSearchCategoryWidget extends StatelessWidget {
@@ -31,8 +32,8 @@ class PartnerSearchCategoryWidget extends StatelessWidget {
             ),
             itemCount: 9,
             itemBuilder: (context, index) {
-              return InkWell(
-                onTap: () {
+              return BouncingWidget(
+                onPressed: () {
                   Get.toNamed(BringPath.PARTNER_SEARCH_CATEGORY, arguments: {'category': index.toString()});
                 },
                 child: Container(
