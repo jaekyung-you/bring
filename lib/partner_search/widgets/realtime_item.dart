@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:get/get.dart';
 
 import '../../const/app_config.dart';
@@ -13,7 +14,7 @@ class RealtimeItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Get.toNamed(BringPath.IDEAL_DETAIL);
+        Get.toNamed(BringPath.IDEA_DETAIL);
       },
       child: Container(
         height: 80,

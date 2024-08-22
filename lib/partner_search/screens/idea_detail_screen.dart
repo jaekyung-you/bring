@@ -2,7 +2,6 @@ import 'package:bring/common/bring_header.dart';
 import 'package:bring/const/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../common/base_round_button.dart';
 import '../../common/divider_widget.dart';
 import '../../common/image_page_view.dart';

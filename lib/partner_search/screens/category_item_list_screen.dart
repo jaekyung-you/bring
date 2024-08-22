@@ -1,3 +1,4 @@
+import 'package:bring/common/idea_write_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -20,6 +21,7 @@ class _CategoryItemListScreenState extends State<CategoryItemListScreen> {
         init: CategoryItemListController(),
         builder: (controller) {
           return Scaffold(
+            floatingActionButton: IdeaWriteButton(),
             body: Column(
               children: [
                 const SizedBox(height: 32),

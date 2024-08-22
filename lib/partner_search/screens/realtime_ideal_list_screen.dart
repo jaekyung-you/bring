@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../common/bring_header.dart';
+import '../../common/idea_write_button.dart';
 import '../../const/app_config.dart';
 import '../widgets/realtime_item.dart';
 
@@ -9,6 +10,7 @@ class RealtimeIdealListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: IdeaWriteButton(),
       body: Column(
         children: [
           const SizedBox(height: 32),

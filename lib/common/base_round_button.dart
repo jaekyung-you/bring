@@ -1,3 +1,4 @@
+import 'package:bring/partner_search/widgets/partner_search_category_widget.dart';
 import 'package:flutter/material.dart';
 import '../const/app_config.dart';
 
