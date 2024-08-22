@@ -45,8 +45,8 @@ class _MyHomePageState extends State<MyHomePage> {
     PartnerSearchMainScreen(),
     ConsultBusinessMainScreen(),
     FundingRequestMainScreen(),
-    LoginScreen(),
-    // MyProfileMainScreen(),
+    // LoginScreen(),
+    MyProfileMainScreen(),
   ];
 
   void _onItemTapped(int index) {

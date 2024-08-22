@@ -1,7 +1,6 @@
 import 'package:bring/const/app_config.dart';
 import 'package:bring/const/theme.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:get/get.dart';
 import '../../common/bouncing_widget.dart';
 import '../../routes/bring_path.dart';

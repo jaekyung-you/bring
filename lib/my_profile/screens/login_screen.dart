@@ -1,3 +1,4 @@
+import 'package:bring/common/bouncing_widget.dart';
 import 'package:bring/const/app_config.dart';
 import 'package:flutter/material.dart';
 
@@ -12,6 +13,7 @@ class LoginScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text('로그인이 필요해요'),
+            const SizedBox(height: AppConfig.innerPadding),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -23,7 +25,9 @@ class LoginScreen extends StatelessWidget {
                 const SizedBox(width: AppConfig.contentPadding),
                 naverLoginButton(),
               ],
-            )
+            ),
+            const SizedBox(height: AppConfig.innerPadding),
+            Text('카카오 고객센터 문의하기 > '),
           ],
         ),
       ),
@@ -31,37 +35,49 @@ class LoginScreen extends StatelessWidget {
   }
 
   Widget kakaoLoginButton() {
-    return Container(
-      width: 40,
-      height: 40,
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-          Image.asset('assets/images/kakao_login_icon_bg.png', width: 40),
-          Image.asset('assets/images/kakao_login_icon_fg.png', width: 20),
-        ],
+    return BouncingWidget(
+      onPressed: () {},
+      child: SizedBox(
+        width: 40,
+        height: 40,
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            Image.asset('assets/images/kakao_login_icon_bg.png', width: 40),
+            Image.asset('assets/images/kakao_login_icon_fg.png', width: 20),
+          ],
+        ),
       ),
     );
   }
 
   Widget googleLoginButton() {
-    return Container(
-      width: 40,
-      height: 40,
-      padding: const EdgeInsets.all(10.0),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(AppConfig.borderRadiusSub),
+    return BouncingWidget(
+      onPressed: () {},
+      child: Container(
+        width: 40,
+        height: 40,
+        padding: const EdgeInsets.all(10.0),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(AppConfig.borderRadiusSub),
+        ),
+        child: Image.asset('assets/images/google_login_icon.png'),
       ),
-      child: Image.asset('assets/images/google_login_icon.png'),
     );
   }
 
   Widget appleLoginButton() {
-    return Image.asset('assets/images/apple_login_icon.png', width: 40);
+    return BouncingWidget(
+      onPressed: () {},
+      child: Image.asset('assets/images/apple_login_icon.png', width: 40),
+    );
   }
 
   Widget naverLoginButton() {
-    return Image.asset('assets/images/naver_login_icon.png', width: 40);
+    return BouncingWidget(
+      onPressed: () {},
+      child: Image.asset('assets/images/naver_login_icon.png', width: 40),
+    );
   }
 }
