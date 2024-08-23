@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../const/app_config.dart';
 
-class BaseRoundButton extends StatefulWidget {
+class BringRoundButton extends StatefulWidget {
   String buttonText;
   Function onPressed;
   Color buttonFgColor;
@@ -14,7 +14,7 @@ class BaseRoundButton extends StatefulWidget {
   Icon? prefixIcon;
   Icon? suffixIcon;
 
-  BaseRoundButton({
+  BringRoundButton({
     super.key,
     required this.buttonText,
     required this.onPressed,
@@ -29,10 +29,10 @@ class BaseRoundButton extends StatefulWidget {
   });
 
   @override
-  State<BaseRoundButton> createState() => _BaseRoundButtonState();
+  State<BringRoundButton> createState() => _BringRoundButtonState();
 }
 
-class _BaseRoundButtonState extends State<BaseRoundButton> with SingleTickerProviderStateMixin {
+class _BringRoundButtonState extends State<BringRoundButton> with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late double _scale;
 

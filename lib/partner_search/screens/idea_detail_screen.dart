@@ -2,12 +2,11 @@ import 'package:bring/common/bring_header.dart';
 import 'package:bring/const/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../common/base_round_button.dart';
+import '../../common/bring_round_button.dart';
 import '../../common/bring_profile_header.dart';
 import '../../common/divider_widget.dart';
 import '../../common/image_page_view.dart';
 import '../../const/app_config.dart';
-import '../../routes/bring_path.dart';
 import '../controllers/item_detail_controller.dart';
 
 class IdeaDetailScreen extends StatelessWidget {
@@ -171,7 +170,7 @@ class IdeaDetailScreen extends StatelessWidget {
               children: [
                 const SizedBox(width: AppConfig.innerPadding),
                 Expanded(
-                    child: BaseRoundButton(
+                    child: BringRoundButton(
                         buttonText: '채팅하기', onPressed: () {}, buttonFgColor: Colors.white, buttonBgColor: BringColor.primaryNavy)),
                 SizedBox(
                   height: 64,

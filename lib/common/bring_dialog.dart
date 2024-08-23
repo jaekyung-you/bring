@@ -1,4 +1,4 @@
-import 'package:bring/common/base_round_button.dart';
+import 'package:bring/common/bring_round_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -102,7 +102,7 @@ class _BringDialogState extends State<BringDialog> {
             Row(
               children: [
                 Expanded(
-                  child: BaseRoundButton(
+                  child: BringRoundButton(
                     buttonText: widget.firstButtonText,
                     onPressed: () {
                       if (widget.onPressFirstButton != null) {
@@ -118,7 +118,7 @@ class _BringDialogState extends State<BringDialog> {
                   Expanded(
                     child: Padding(
                       padding: const EdgeInsets.only(left: AppConfig.contentPadding),
-                      child: BaseRoundButton(
+                      child: BringRoundButton(
                         buttonText: widget.secondButtonText!,
                         onPressed: () {
                           if (widget.onPressSecondButton != null) {

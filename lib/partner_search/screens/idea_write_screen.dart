@@ -1,4 +1,4 @@
-import 'package:bring/common/base_round_button.dart';
+import 'package:bring/common/bring_round_button.dart';
 import 'package:bring/common/bring_header.dart';
 import 'package:bring/const/theme.dart';
 import 'package:bring/partner_search/controllers/idea_write_controller.dart';
@@ -101,7 +101,7 @@ class _IdeaWriteScreenState extends State<IdeaWriteScreen> {
                               borderRadius: BorderRadius.circular(AppConfig.borderRadiusMain)),
                         ),
                         const SizedBox(height: AppConfig.innerPadding),
-                        BaseRoundButton(
+                        BringRoundButton(
                           buttonText: '등록하기',
                           onPressed: () {
                             controller.onTapRegisterButton();

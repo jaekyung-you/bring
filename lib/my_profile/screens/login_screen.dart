@@ -1,9 +1,19 @@
 import 'package:bring/common/bouncing_widget.dart';
 import 'package:bring/const/app_config.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class LoginScreen extends StatelessWidget {
+import '../controllers/login_controller.dart';
+
+class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
+
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  final LoginController controller = Get.put(LoginController());
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +46,9 @@ class LoginScreen extends StatelessWidget {
 
   Widget kakaoLoginButton() {
     return BouncingWidget(
-      onPressed: () {},
+      onPressed: () {
+
+      },
       child: SizedBox(
         width: 40,
         height: 40,

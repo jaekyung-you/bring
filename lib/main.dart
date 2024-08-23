@@ -1,12 +1,14 @@
+import 'package:bring/common/bring_snack_bar.dart';
 import 'package:bring/const/theme.dart';
 import 'package:bring/consult_business/screens/consult_business_main_screen.dart';
 import 'package:bring/funding_request/screens/funding_request_main_screen.dart';
-import 'package:bring/my_profile/screens/my_profile_main_screen.dart';
 import 'package:bring/partner_search/screens/partner_search_main_screen.dart';
 import 'package:bring/routes/bring_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+
+import 'my_profile/screens/login_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -44,8 +46,8 @@ class _MyHomePageState extends State<MyHomePage> {
     PartnerSearchMainScreen(),
     ConsultBusinessMainScreen(),
     FundingRequestMainScreen(),
-    // LoginScreen(),
-    MyProfileMainScreen(),
+    LoginScreen(),
+    // MyProfileMainScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -58,7 +60,13 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: bottomNavBar(),
-      body: screens.elementAt(selectedIndex),
+      body: Stack(
+        children: [
+          screens.elementAt(selectedIndex),
+          BringSnackBar(text: '로그인되었어요!'),
+          // showToast ? _toast(text: AppEventUtil().toastMessage) : const SizedBox.shrink(),
+        ],
+      ),
     );
   }
 
