@@ -29,11 +29,11 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 kakaoLoginButton(),
                 const SizedBox(width: AppConfig.contentPadding),
+                naverLoginButton(),
+                const SizedBox(width: AppConfig.contentPadding),
                 googleLoginButton(),
                 const SizedBox(width: AppConfig.contentPadding),
                 appleLoginButton(),
-                const SizedBox(width: AppConfig.contentPadding),
-                naverLoginButton(),
               ],
             ),
             const SizedBox(height: AppConfig.innerPadding),
@@ -46,9 +46,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Widget kakaoLoginButton() {
     return BouncingWidget(
-      onPressed: () {
-
-      },
+      onPressed: () {},
       child: SizedBox(
         width: 40,
         height: 40,
@@ -88,7 +86,9 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Widget naverLoginButton() {
     return BouncingWidget(
-      onPressed: () {},
+      onPressed: () {
+        controller.loginWithNaver();
+      },
       child: Image.asset('assets/images/naver_login_icon.png', width: 40),
     );
   }

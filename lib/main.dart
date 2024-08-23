@@ -63,7 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Stack(
         children: [
           screens.elementAt(selectedIndex),
-          BringSnackBar(text: '로그인되었어요!'),
+          // BringSnackBar(text: '로그인되었어요!'),
           // showToast ? _toast(text: AppEventUtil().toastMessage) : const SizedBox.shrink(),
         ],
       ),

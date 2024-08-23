@@ -2,6 +2,55 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+    <key>CFBundleURLTypes</key>
+            <array>
+                <dict>
+                    <key>CFBundleTypeRole</key>
+                    <string>Editor</string>
+                    <key>CFBundleURLSchemes</key>
+                    <array>
+                        <string>bring</string>
+                    </array>
+                </dict>
+            </array>
+            
+            <key>LSApplicationQueriesSchemes</key>
+                    <array>
+                        <string>naversearchapp</string>
+                        <string>naversearchthirdlogin</string>
+                    </array>
+                    <key>naverServiceAppUrlScheme</key>
+                    <string>bring</string>
+                    <key>naverConsumerKey</key>
+                    <string>t97nNtVyNz9YQd_74LiB</string>
+                    <key>naverConsumerSecret</key>
+                    <string>lLSGqKkjh9</string>
+                    <key>naverServiceAppName</key>
+                    <string>브링Bring</string>
+                    <!-- http allows configurations -->
+                            <key>NSAppTransportSecurity</key>
+                            <dict>
+                               <key>NSAllowsArbitraryLoads</key>
+                               <true/>
+                               <key>NSExceptionDomains</key>
+                               <dict>
+                                  <key>naver.com</key>
+                                  <dict>
+                                     <key>NSExceptionRequiresForwardSecrecy</key>
+                                     <false/>
+                                     <key>NSIncludesSubdomains</key>
+                                     <true/>
+                                  </dict>
+                                  <key>naver.net</key>
+                                  <dict>
+                                     <key>NSExceptionRequiresForwardSecrecy</key>
+                                     <false/>
+                                     <key>NSIncludesSubdomains</key>
+                                     <true/>
+                                  </dict>
+                               </dict>
+                            </dict>
+                    
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
