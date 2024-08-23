@@ -3,6 +3,7 @@ import 'package:bring/const/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../common/base_round_button.dart';
+import '../../common/bring_profile_header.dart';
 import '../../common/divider_widget.dart';
 import '../../common/image_page_view.dart';
 import '../../const/app_config.dart';
@@ -28,9 +29,12 @@ class IdeaDetailScreen extends StatelessWidget {
                   child: SingleChildScrollView(
                     child: Column(
                       children: [
-                        // 이미지 페이징뷰
-                        ImagePageView(imageList: controller.imageList, height: 300),
-                        // 제목
+                        BringProfileHeader(
+                          imageUrl: 'https://picsum.photos/id/237/200/300',
+                          nickname: '닉네임이에요',
+                          width: 48,
+                          height: 60,
+                        ),
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: AppConfig.innerPadding),
                           child: Column(
@@ -149,11 +153,12 @@ class IdeaDetailScreen extends StatelessWidget {
                                   fontSize: 16,
                                 ),
                               ),
-
-                              const SizedBox(height: 100),
+                              const SizedBox(height: AppConfig.contentPadding),
                             ],
                           ),
-                        )
+                        ),
+                        if (controller.imageList.isNotEmpty) ImagePageView(imageList: controller.imageList, height: 300),
+                        const SizedBox(height: 100),
                       ],
                     ),
                   ),

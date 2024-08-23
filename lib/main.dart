@@ -1,7 +1,6 @@
 import 'package:bring/const/theme.dart';
 import 'package:bring/consult_business/screens/consult_business_main_screen.dart';
 import 'package:bring/funding_request/screens/funding_request_main_screen.dart';
-import 'package:bring/my_profile/screens/login_screen.dart';
 import 'package:bring/my_profile/screens/my_profile_main_screen.dart';
 import 'package:bring/partner_search/screens/partner_search_main_screen.dart';
 import 'package:bring/routes/bring_routes.dart';
