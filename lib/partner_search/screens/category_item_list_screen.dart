@@ -22,28 +22,29 @@ class _CategoryItemListScreenState extends State<CategoryItemListScreen> {
         builder: (controller) {
           return Scaffold(
             floatingActionButton: IdeaWriteButton(),
-            body: Column(
-              children: [
-                const SizedBox(height: 32),
-                Obx(() {
-                  return BringHeader(title: controller.category.value);
-                }),
-                // todo: 무한 스크롤 구현 필요
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: AppConfig.innerPadding),
-                    child: ListView.separated(
-                        shrinkWrap: true,
-                        itemCount: 10,
-                        separatorBuilder: (context, index) {
-                          return const SizedBox(height: AppConfig.innerPadding);
-                        },
-                        itemBuilder: (context, index) {
-                          return RealtimeItem();
-                        }),
-                  ),
-                )
-              ],
+            body: SafeArea(
+              child: Column(
+                children: [
+                  Obx(() {
+                    return BringHeader(title: controller.category.value);
+                  }),
+                  // todo: 무한 스크롤 구현 필요
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: AppConfig.innerPadding),
+                      child: ListView.separated(
+                          shrinkWrap: true,
+                          itemCount: 10,
+                          separatorBuilder: (context, index) {
+                            return const SizedBox(height: AppConfig.innerPadding);
+                          },
+                          itemBuilder: (context, index) {
+                            return RealtimeItem();
+                          }),
+                    ),
+                  )
+                ],
+              ),
             ),
           );
         });

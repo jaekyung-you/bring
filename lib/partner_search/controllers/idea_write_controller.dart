@@ -5,8 +5,8 @@ import '../../common/bring_dialog.dart';
 class IdeaWriteController extends GetxController {
   void onTapRegisterButton() {
     Get.dialog(BringDialog.twoButton(
-      title: '알림',
-      desc: '소중한 사업 아이디어를 등록하시겠습니까?',
+      title: '소중한 사업 아이디어를 할까요?',
+      // desc: '소중한 사업 아이디어를 등록하시겠습니까?',
       firstButtonText: '등록할래요!',
       onPressFirstButton: () {
         Get.back();
@@ -21,8 +21,8 @@ class IdeaWriteController extends GetxController {
 
   void onTapBackButton() {
     Get.dialog(BringDialog.twoButton(
-      title: '알림',
-      desc: '작성을 취소하시겠어요?',
+      title: '작성을 취소할까요?',
+      // desc: '작성을 취소하시겠어요?',
       firstButtonText: '취소할래요!',
       onPressFirstButton: () {
         Get.back();

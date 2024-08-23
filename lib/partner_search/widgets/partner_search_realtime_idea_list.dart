@@ -15,24 +15,24 @@ class PartnerSearchRealtimeIdeaList extends StatelessWidget {
       children: [
         Padding(
           padding: const EdgeInsets.symmetric(vertical: AppConfig.contentPadding),
-          child: Row(
-            children: [
-              const Text(
-                '실시간 아이디어',
-                style: TextStyle(fontWeight: FontWeight.w700, color: BringColor.primaryNavy, fontSize: 24),
-              ),
-              const Spacer(),
-              InkWell(
-                onTap: () {
-                  Get.toNamed(BringPath.PARTNER_SEARCH_REALTIME_IDEA);
-                },
-                child: const Icon(
+          child: InkWell(
+            onTap: () {
+              Get.toNamed(BringPath.PARTNER_SEARCH_REALTIME_IDEA);
+            },
+            child: Row(
+              children: [
+                const Text(
+                  '실시간 아이디어',
+                  style: TextStyle(fontWeight: FontWeight.w700, color: BringColor.primaryNavy, fontSize: 24),
+                ),
+                const Spacer(),
+                const Icon(
                   Icons.arrow_forward_ios,
                   size: 24,
                   color: BringColor.primaryNavy,
-                ),
-              )
-            ],
+                )
+              ],
+            ),
           ),
         ),
         const SizedBox(height: 8),

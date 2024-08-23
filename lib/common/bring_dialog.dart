@@ -1,8 +1,6 @@
 import 'package:bring/common/bring_round_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
-
 import '../const/app_config.dart';
 import '../const/theme.dart';
 
@@ -54,27 +52,27 @@ class _BringDialogState extends State<BringDialog> {
   @override
   Widget build(BuildContext context) {
     return Dialog(
-      insetPadding: const EdgeInsets.symmetric(horizontal: AppConfig.innerPadding),
+      insetPadding: const EdgeInsets.symmetric(horizontal: AppConfig.innerPadding * 2),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppConfig.borderRadiusMain)),
       backgroundColor: Colors.white,
       shadowColor: null,
       surfaceTintColor: null,
       child: Container(
-        padding: const EdgeInsets.all(AppConfig.contentPadding),
+        padding: const EdgeInsets.all(AppConfig.innerPadding),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             /// 닫기 버튼
-            Row(
-              children: [
-                const Spacer(),
-                IconButton(
-                    onPressed: () {
-                      Get.back();
-                    },
-                    icon: const Icon(Icons.close)),
-              ],
-            ),
+            // Row(
+            //   children: [
+            //     const Spacer(),
+            //     IconButton(
+            //         onPressed: () {
+            //           Get.back();
+            //         },
+            //         icon: const Icon(Icons.close)),
+            //   ],
+            // ),
 
             /// 제목
             Text(
@@ -83,14 +81,14 @@ class _BringDialogState extends State<BringDialog> {
             ),
 
             /// 내용
-            if (widget.desc != null)
+            widget.desc != null ?
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: AppConfig.contentPadding),
                 child: Text(
                   widget.desc!,
                   style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w500),
                 ),
-              ),
+              ) : const SizedBox(height: AppConfig.innerPadding),
 
             if (widget.content != null)
               Padding(
@@ -111,7 +109,7 @@ class _BringDialogState extends State<BringDialog> {
                     },
                     buttonFgColor: Colors.white,
                     buttonBgColor: BringColor.primaryNavy,
-                    height: 50,
+                    height: 40,
                   ),
                 ),
                 if (widget.secondButtonText != null)
@@ -127,7 +125,7 @@ class _BringDialogState extends State<BringDialog> {
                         },
                         buttonFgColor: Colors.white,
                         buttonBgColor: BringColor.primaryNavy.withOpacity(0.5),
-                        height: 50,
+                        height: 40,
                       ),
                     ),
                   ),
