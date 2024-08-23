@@ -33,7 +33,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SizedBox(width: AppConfig.contentPadding),
                 googleLoginButton(),
                 const SizedBox(width: AppConfig.contentPadding),
-                appleLoginButton(),
+                if (GetPlatform.isIOS) appleLoginButton(),
               ],
             ),
             const SizedBox(height: AppConfig.innerPadding),
