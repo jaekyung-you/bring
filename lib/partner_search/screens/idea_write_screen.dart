@@ -1,6 +1,6 @@
 import 'package:bring/common/bring_round_button.dart';
 import 'package:bring/common/bring_header.dart';
-import 'package:bring/const/theme.dart';
+import 'package:bring/const/bring_color.dart';
 import 'package:bring/partner_search/controllers/idea_write_controller.dart';
 import 'package:flutter/material.dart';
 import '../../common/bring_textfield.dart';

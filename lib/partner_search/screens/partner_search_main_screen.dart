@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../const/app_config.dart';
-import '../../const/theme.dart';
+import '../../const/bring_color.dart';
 import '../widgets/partner_search_category_widget.dart';
 import '../widgets/partner_search_realtime_idea_list.dart';
 

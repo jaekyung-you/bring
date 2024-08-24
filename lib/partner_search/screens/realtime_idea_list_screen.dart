@@ -4,8 +4,8 @@ import '../../common/idea_write_button.dart';
 import '../../const/app_config.dart';
 import '../widgets/realtime_item.dart';
 
-class RealtimeIdealListScreen extends StatelessWidget {
-  const RealtimeIdealListScreen({super.key});
+class RealtimeIdeaListScreen extends StatelessWidget {
+  const RealtimeIdeaListScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

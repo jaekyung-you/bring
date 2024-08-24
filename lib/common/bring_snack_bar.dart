@@ -1,4 +1,4 @@
-import 'package:bring/const/theme.dart';
+import 'package:bring/const/bring_color.dart';
 import 'package:flutter/material.dart';
 
 class BringSnackBar extends StatelessWidget {

@@ -8,6 +8,7 @@ class BringRoundButton extends StatefulWidget {
   Color buttonFgColor;
   Color buttonBgColor;
   Color borderColor;
+  double? borderRadius;
   double width;
   double height;
   double borderWidth;
@@ -21,6 +22,7 @@ class BringRoundButton extends StatefulWidget {
     required this.buttonFgColor,
     required this.buttonBgColor,
     this.borderColor = Colors.transparent,
+    this.borderRadius,
     this.width = double.maxFinite,
     this.height = 56,
     this.borderWidth = 1,
@@ -80,7 +82,7 @@ class _BringRoundButtonState extends State<BringRoundButton> with SingleTickerPr
           height: widget.height,
           alignment: Alignment.center,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(AppConfig.borderRadiusMain),
+            borderRadius: BorderRadius.circular(widget.borderRadius ?? AppConfig.borderRadiusMain),
             color: widget.buttonBgColor,
             border: Border.all(color: widget.borderColor, width: widget.borderWidth),
           ),

@@ -1,5 +1,5 @@
 import 'package:bring/const/app_config.dart';
-import 'package:bring/const/theme.dart';
+import 'package:bring/const/bring_color.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../common/bouncing_widget.dart';

@@ -11,7 +11,7 @@ import '../consult_business/screens/consult_business_write_screen.dart';
 import '../partner_search/screens/category_item_list_screen.dart';
 import '../partner_search/screens/idea_detail_screen.dart';
 import '../partner_search/screens/idea_write_screen.dart';
-import '../partner_search/screens/realtime_ideal_list_screen.dart';
+import '../partner_search/screens/realtime_idea_list_screen.dart';
 
 class BringRoutes {
   BringRoutes._privateConstructor();
@@ -27,7 +27,7 @@ class BringRoutes {
 
     GetPage(name: BringPath.PARTNER_SEARCH, page: () => const MyHomePage()),
     GetPage(name: BringPath.PARTNER_SEARCH_CATEGORY, page: () => const CategoryItemListScreen()),
-    GetPage(name: BringPath.PARTNER_SEARCH_REALTIME_IDEA, page: () => const RealtimeIdealListScreen()),
+    GetPage(name: BringPath.PARTNER_SEARCH_REALTIME_IDEA, page: () => const RealtimeIdeaListScreen()),
     GetPage(name: BringPath.BUSINESS_IDEA_DETAIL, page: () => const IdeaDetailScreen()),
     GetPage(name: BringPath.BUSINESS_IDEA_WRITE, page: () => const IdeaWriteScreen()),
 

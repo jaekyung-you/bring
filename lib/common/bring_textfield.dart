@@ -1,7 +1,7 @@
 import 'package:bring/const/app_config.dart';
 import 'package:flutter/material.dart';
 
-import '../const/theme.dart';
+import '../const/bring_color.dart';
 
 class BringTextField extends StatefulWidget {
   final String titleText;

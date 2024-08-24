@@ -1,5 +1,5 @@
-import 'package:bring/common/bouncing_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:bring/common/bouncing_widget.dart';
 import 'package:get/get.dart';
 
 import '../../const/app_config.dart';
@@ -7,14 +7,14 @@ import '../../const/bring_color.dart';
 import '../../routes/bring_path.dart';
 import '../../util/number_formatter.dart';
 
-class RealtimeItem extends StatelessWidget {
-  const RealtimeItem({super.key});
+class ConsultBusinessListItem extends StatelessWidget {
+  const ConsultBusinessListItem({super.key});
 
   @override
   Widget build(BuildContext context) {
     return BouncingWidget(
       onPressed: () {
-        Get.toNamed(BringPath.BUSINESS_IDEA_DETAIL);
+        Get.toNamed(BringPath.CONSULT_BUSINESS_DETAIL);
       },
       child: Container(
         height: 80,

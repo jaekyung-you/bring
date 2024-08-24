@@ -3,7 +3,7 @@ import 'package:bring/routes/bring_path.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../const/app_config.dart';
-import '../../const/theme.dart';
+import '../../const/bring_color.dart';
 
 class PartnerSearchRealtimeIdeaList extends StatelessWidget {
   const PartnerSearchRealtimeIdeaList({super.key});

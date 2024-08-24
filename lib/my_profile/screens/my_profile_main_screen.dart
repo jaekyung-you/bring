@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:styled_text/styled_text.dart';
 import '../../common/bring_badge.dart';
 import '../../common/bring_profile_header.dart';
-import '../../const/theme.dart';
+import '../../const/bring_color.dart';
 
 class MyProfileMainScreen extends StatefulWidget {
   const MyProfileMainScreen({super.key});

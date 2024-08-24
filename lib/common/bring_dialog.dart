@@ -2,7 +2,7 @@ import 'package:bring/common/bring_round_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../const/app_config.dart';
-import '../const/theme.dart';
+import '../const/bring_color.dart';
 
 class BringDialog extends StatefulWidget {
   String title;

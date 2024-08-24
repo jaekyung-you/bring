@@ -3,11 +3,10 @@ import 'package:bring/const/app_config.dart';
 import 'package:bring/const/bring_color.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../routes/bring_path.dart';
 
-import '../routes/bring_path.dart';
-
-class IdeaWriteButton extends StatelessWidget {
-  const IdeaWriteButton({super.key});
+class ConsultBusinessWriteButton extends StatelessWidget {
+  const ConsultBusinessWriteButton({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +17,7 @@ class IdeaWriteButton extends StatelessWidget {
         //   return;
         // }
 
-        Get.toNamed(BringPath.BUSINESS_IDEA_WRITE);
+        Get.toNamed(BringPath.CONSULT_BUSINESS_WRITE);
       },
       child: Container(
         width: 64,
