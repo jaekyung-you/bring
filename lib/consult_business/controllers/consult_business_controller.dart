@@ -1,6 +1,8 @@
 import 'package:bring/data/response/consult_business_filter.dart';
 import 'package:get/get.dart';
 
+import '../../common/bring_dialog.dart';
+
 class ConsultBusinessController extends GetxController {
   RxList<ConsultBusinessFilter> filterList = <ConsultBusinessFilter>[].obs;
   Rx<ConsultBusinessFilter> selectedFilter = ConsultBusinessFilter(title: '', code: '').obs;
