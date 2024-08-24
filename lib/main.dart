@@ -9,6 +9,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import 'my_profile/screens/login_screen.dart';
+import 'my_profile/screens/my_profile_main_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -46,8 +47,8 @@ class _MyHomePageState extends State<MyHomePage> {
     PartnerSearchMainScreen(),
     ConsultBusinessMainScreen(),
     FundingRequestMainScreen(),
-    LoginScreen(),
-    // MyProfileMainScreen(),
+    // LoginScreen(),
+    MyProfileMainScreen(),
   ];
 
   void _onItemTapped(int index) {

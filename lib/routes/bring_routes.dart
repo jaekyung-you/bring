@@ -1,5 +1,7 @@
 import 'package:bring/main.dart';
 import 'package:bring/my_profile/screens/login_screen.dart';
+import 'package:bring/my_profile/screens/my_profile_edit_screen.dart';
+import 'package:bring/my_profile/screens/my_profile_main_screen.dart';
 import 'package:bring/routes/bring_path.dart';
 import 'package:get/get.dart';
 
@@ -27,5 +29,8 @@ class BringRoutes {
     GetPage(name: BringPath.IDEA_WRITE, page: () => const IdeaWriteScreen()),
 
     GetPage(name: BringPath.LOGIN, page: () => const LoginScreen()),
+
+    GetPage(name: BringPath.MY_PROFILE, page: () => const MyProfileMainScreen()),
+    GetPage(name: BringPath.MY_PROFILE_EDIT, page: () => const MyProfileEditScreen()),
   ];
 }

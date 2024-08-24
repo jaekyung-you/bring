@@ -9,4 +9,7 @@ class BringPath {
   static const IDEA_WRITE = '/idea_write'; // 아이디어 작성화면
 
   static const LOGIN = '/login'; // 아이디어 작성화면
+
+  static const MY_PROFILE = '/my_profile'; // 마이 프로필
+  static const MY_PROFILE_EDIT = '/my_profile/edit'; // 프로필 수정화면
 }
