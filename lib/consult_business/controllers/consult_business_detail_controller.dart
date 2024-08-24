@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 class ConsultBusinessDetailController extends GetxController {
   TextEditingController replyTextController = TextEditingController();
 
-  RxString content = ''.obs;
+  RxString content = '디테일디테일디테일디테일디테일디테일디테일디테일디테일'.obs;
 
 }
 
