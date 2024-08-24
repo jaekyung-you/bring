@@ -61,9 +61,10 @@ class _ConsultBusinessDetailScreenState extends State<ConsultBusinessDetailScree
                             width: 48,
                             height: 60,
                           ),
-
                           DividerWidget(),
-                          // 비전, 목표
+                          Obx(() {
+                            return Text(controller.content.value);
+                          })
                         ],
                       ),
                     ),

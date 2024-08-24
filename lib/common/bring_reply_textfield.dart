@@ -30,7 +30,24 @@ class BringReplyTextField extends StatelessWidget {
               CircleImageWidget(imageUrl: Session().profileImageUrl, width: 40),
               const SizedBox(width: AppConfig.contentPadding),
               Expanded(
-                child: BringTextField(titleText: '', hintText: hintText, maxLength: 100),
+                child: TextField(
+                  controller: controller,
+                  decoration: InputDecoration(
+                    contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(AppConfig.borderRadiusMain),
+                      borderSide: const BorderSide(color: BringColor.grey01),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(AppConfig.borderRadiusMain),
+                      borderSide: const BorderSide(color: BringColor.grey01),
+                    ),
+                    hintText: '댓글을 달아보세요.',
+                  ),
+                  onTapOutside: (PointerDownEvent event) {
+                    FocusManager.instance.primaryFocus?.unfocus();
+                  },
+                ),
               ),
               const SizedBox(width: AppConfig.contentPadding),
               BringRoundButton(
@@ -38,9 +55,7 @@ class BringReplyTextField extends StatelessWidget {
                 onPressed: () => onTapRegister(),
                 buttonFgColor: BringColor.primaryNavy,
                 buttonBgColor: Colors.white,
-                borderColor: BringColor.primaryNavy,
-                borderRadius: 30,
-                width: 60,
+                width: 50,
                 height: 40,
               ),
             ],
