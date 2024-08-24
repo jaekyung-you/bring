@@ -14,7 +14,7 @@ class RealtimeItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return BouncingWidget(
       onPressed: () {
-        Get.toNamed(BringPath.IDEA_DETAIL);
+        Get.toNamed(BringPath.BUSINESS_IDEA_DETAIL);
       },
       child: Container(
         height: 80,

@@ -18,7 +18,7 @@ class IdeaWriteButton extends StatelessWidget {
         //   return;
         // }
 
-        Get.toNamed(BringPath.IDEA_WRITE);
+        Get.toNamed(BringPath.BUSINESS_IDEA_WRITE);
       },
       child: Container(
         width: 64,

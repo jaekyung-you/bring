@@ -5,6 +5,9 @@ import 'package:bring/my_profile/screens/my_profile_main_screen.dart';
 import 'package:bring/routes/bring_path.dart';
 import 'package:get/get.dart';
 
+import '../consult_business/screens/consult_business_detail_screen.dart';
+import '../consult_business/screens/consult_business_main_screen.dart';
+import '../consult_business/screens/consult_business_write_screen.dart';
 import '../partner_search/screens/category_item_list_screen.dart';
 import '../partner_search/screens/idea_detail_screen.dart';
 import '../partner_search/screens/idea_write_screen.dart';
@@ -25,8 +28,12 @@ class BringRoutes {
     GetPage(name: BringPath.PARTNER_SEARCH, page: () => const MyHomePage()),
     GetPage(name: BringPath.PARTNER_SEARCH_CATEGORY, page: () => const CategoryItemListScreen()),
     GetPage(name: BringPath.PARTNER_SEARCH_REALTIME_IDEA, page: () => const RealtimeIdealListScreen()),
-    GetPage(name: BringPath.IDEA_DETAIL, page: () => const IdeaDetailScreen()),
-    GetPage(name: BringPath.IDEA_WRITE, page: () => const IdeaWriteScreen()),
+    GetPage(name: BringPath.BUSINESS_IDEA_DETAIL, page: () => const IdeaDetailScreen()),
+    GetPage(name: BringPath.BUSINESS_IDEA_WRITE, page: () => const IdeaWriteScreen()),
+
+    GetPage(name: BringPath.CONSULT_BUSINESS, page: () => const ConsultBusinessMainScreen()),
+    GetPage(name: BringPath.CONSULT_BUSINESS_DETAIL, page: () => const ConsultBusinessDetailScreen()),
+    GetPage(name: BringPath.CONSULT_BUSINESS_WRITE, page: () => const ConsultBusinessWriteScreen()),
 
     GetPage(name: BringPath.LOGIN, page: () => const LoginScreen()),
 
