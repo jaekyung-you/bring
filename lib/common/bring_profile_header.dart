@@ -15,7 +15,6 @@ class BringProfileHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: height,
-      padding: const EdgeInsets.symmetric(horizontal: AppConfig.innerPadding, vertical: AppConfig.contentPadding),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [

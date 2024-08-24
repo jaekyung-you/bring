@@ -23,17 +23,19 @@ class IdeaDetailScreen extends StatelessWidget {
           children: [
             Column(
               children: [
-                const BringHeader(title: '상세화면'),
+                const BringHeader(
+                  title: '',
+                  rightButton: InkWell(
+                    child: Icon(
+                      Icons.report,
+                      size: 30,
+                    ),
+                  ),
+                ),
                 Expanded(
                   child: SingleChildScrollView(
                     child: Column(
                       children: [
-                        BringProfileHeader(
-                          imageUrl: 'https://picsum.photos/id/237/200/300',
-                          nickname: '닉네임이에요',
-                          width: 48,
-                          height: 60,
-                        ),
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: AppConfig.innerPadding),
                           child: Column(
@@ -52,6 +54,12 @@ class IdeaDetailScreen extends StatelessWidget {
                               const SizedBox(
                                 height: AppConfig.contentPadding,
                               ),
+                              BringProfileHeader(
+                                imageUrl: 'https://picsum.photos/id/237/200/300',
+                                nickname: '닉네임이에요',
+                                width: 48,
+                                height: 60,
+                              ),
                               Row(
                                 children: [
                                   Text('찜 n |'),
@@ -63,7 +71,6 @@ class IdeaDetailScreen extends StatelessWidget {
                                   Text('2024-08-21'),
                                 ],
                               ),
-
                               DividerWidget(),
                               // 비전, 목표
                               subTitleWidget(image: '', title: '우리 프로젝트에요'),
