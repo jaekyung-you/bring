@@ -34,7 +34,7 @@ class _ConsultBusinessMainScreenState extends State<ConsultBusinessMainScreen> {
                 style: TextStyle(fontWeight: FontWeight.w700, color: BringColor.primaryNavy, fontSize: 24),
               ),
             ),
-            ConsultBusinessFilterWidget(filterList: controller.filterList),
+            ConsultBusinessFilterWidget(filterList: controller.filterList, selectedFilter: controller.selectedFilter),
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: AppConfig.innerPadding),

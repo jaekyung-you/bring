@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 
 class ConsultBusinessController extends GetxController {
   RxList<ConsultBusinessFilter> filterList = <ConsultBusinessFilter>[].obs;
+  Rx<ConsultBusinessFilter> selectedFilter = ConsultBusinessFilter(title: '', code: '').obs;
 
   @override
   void onInit() {
