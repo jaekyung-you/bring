@@ -13,4 +13,6 @@ class Session {
   bool isLogined = false;
   LoginType loginType = LoginType.none;
 
+  String profileImageUrl = '';
+
 }

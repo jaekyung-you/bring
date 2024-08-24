@@ -1,12 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../common/bring_header.dart';
 import '../../common/bring_profile_header.dart';
+import '../../common/bring_reply_textfield.dart';
 import '../../common/divider_widget.dart';
 import '../../const/app_config.dart';
+import '../controllers/consult_business_detail_controller.dart';
 
-class ConsultBusinessDetailScreen extends StatelessWidget {
+class ConsultBusinessDetailScreen extends StatefulWidget {
   const ConsultBusinessDetailScreen({super.key});
+
+  @override
+  State<ConsultBusinessDetailScreen> createState() => _ConsultBusinessDetailScreenState();
+}
+
+class _ConsultBusinessDetailScreenState extends State<ConsultBusinessDetailScreen> {
+  final ConsultBusinessDetailController controller = Get.put(ConsultBusinessDetailController());
 
   @override
   Widget build(BuildContext context) {
@@ -60,6 +70,11 @@ class ConsultBusinessDetailScreen extends StatelessWidget {
                   ],
                 ),
               ),
+            ),
+            BringReplyTextField(
+              controller: controller.replyTextController,
+              hintText: '댓글을 달아보세요.',
+              onTapRegister: () {},
             ),
           ],
         ),
