@@ -4,14 +4,15 @@ import 'package:flutter/material.dart';
 
 import '../../const/app_config.dart';
 import '../../const/bring_color.dart';
+import '../../data/response/consult_business_filter.dart';
 
 class ConsultBusinessFilterWidget extends StatelessWidget {
-  const ConsultBusinessFilterWidget({super.key});
+  final List<ConsultBusinessFilter> filterList;
+
+  const ConsultBusinessFilterWidget({super.key, required this.filterList});
 
   @override
   Widget build(BuildContext context) {
-    // todo: Model(title, code) 로 변경 필요
-    final List<String> categoryList = ['고민상담', '업황', '팁', '잡담', '팁', '잡담'];
 
     return Container(
       alignment: Alignment.centerLeft,
@@ -20,7 +21,7 @@ class ConsultBusinessFilterWidget extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         child: Row(
           children: [
-            for (int i = 0; i < categoryList.length; i++)
+            for (int i = 0; i < filterList.length; i++)
               Padding(
                 padding: EdgeInsets.only(right: AppConfig.contentPadding, left: i == 0 ? AppConfig.innerPadding : 0),
                 child: BouncingWidget(
@@ -38,7 +39,7 @@ class ConsultBusinessFilterWidget extends StatelessWidget {
                     ),
                     child: Center(
                       child: Text(
-                        categoryList[i],
+                        filterList[i].title,
                         style: const TextStyle(fontSize: 16.0, color: Colors.white),
                       ),
                     ),

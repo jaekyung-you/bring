@@ -1,5 +1,7 @@
 import 'package:bring/common/bring_header.dart';
+import 'package:bring/consult_business/controllers/consult_business_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../const/app_config.dart';
 import '../../const/bring_color.dart';
@@ -15,6 +17,8 @@ class ConsultBusinessMainScreen extends StatefulWidget {
 }
 
 class _ConsultBusinessMainScreenState extends State<ConsultBusinessMainScreen> {
+  final ConsultBusinessController controller = Get.put(ConsultBusinessController());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +34,7 @@ class _ConsultBusinessMainScreenState extends State<ConsultBusinessMainScreen> {
                 style: TextStyle(fontWeight: FontWeight.w700, color: BringColor.primaryNavy, fontSize: 24),
               ),
             ),
-            const ConsultBusinessFilterWidget(),
+            ConsultBusinessFilterWidget(filterList: controller.filterList),
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: AppConfig.innerPadding),
