@@ -1,4 +1,3 @@
-import 'package:bring/data/vo/bottom_picker_item.dart';
 import 'package:get/get.dart';
 import '../../common/bring_dialog.dart';
 import '../../data/response/consult_business_filter.dart';
@@ -22,7 +21,6 @@ class ConsultBusinessWriteController extends GetxController {
   void onTapRegisterButton() {
     Get.dialog(BringDialog.twoButton(
       title: '질문글을 등록할까요?',
-      // desc: '소중한 사업 아이디어를 등록하시겠습니까?',
       firstButtonText: '등록할래요!',
       onPressFirstButton: () {
         Get.back();
@@ -38,7 +36,6 @@ class ConsultBusinessWriteController extends GetxController {
   void onTapBackButton() {
     Get.dialog(BringDialog.twoButton(
       title: '작성을 취소할까요?',
-      // desc: '작성을 취소하시겠어요?',
       firstButtonText: '취소할래요!',
       onPressFirstButton: () {
         Get.back();

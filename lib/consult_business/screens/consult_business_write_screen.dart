@@ -58,6 +58,9 @@ class _ConsultBusinessWriteScreenState extends State<ConsultBusinessWriteScreen>
                         InkWell(
                           onTap: () {
                             int selectedIndex = 0;
+                            int initialIndex = controller.categoryList.indexOf(controller.selectedCategory.value);
+                            final FixedExtentScrollController pickerController =
+                                FixedExtentScrollController(initialItem: initialIndex); // 초기 인덱스 설정
 
                             Get.bottomSheet(
                               BringBottomSheet(
@@ -67,6 +70,7 @@ class _ConsultBusinessWriteScreenState extends State<ConsultBusinessWriteScreen>
                                   height: 150,
                                   width: Get.width,
                                   child: CupertinoPicker(
+                                      scrollController: pickerController,
                                       itemExtent: 40,
                                       onSelectedItemChanged: (int index) {
                                         selectedIndex = index;
@@ -95,23 +99,29 @@ class _ConsultBusinessWriteScreenState extends State<ConsultBusinessWriteScreen>
                                 borderRadius: BorderRadius.circular(AppConfig.borderRadiusMain)),
                             child: Padding(
                               padding: const EdgeInsets.symmetric(horizontal: AppConfig.contentPadding),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(
-                                    '카테고리 선택',
-                                    style: const TextStyle(color: BringColor.grey02, fontSize: 16),
-                                  ),
-                                  Icon(Icons.arrow_drop_down_outlined)
-                                ],
-                              ),
+                              child: Obx(() {
+                                return Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      controller.selectedCategory.value.title.isNotEmpty
+                                          ? controller.selectedCategory.value.title
+                                          : '카테고리 선택',
+                                      style: TextStyle(
+                                          color: controller.selectedCategory.value.title.isNotEmpty ? Colors.black : BringColor.grey02,
+                                          fontSize: 16),
+                                    ),
+                                    const Icon(Icons.arrow_drop_down_outlined)
+                                  ],
+                                );
+                              }),
                             ),
                           ),
                         ),
                         const SizedBox(height: AppConfig.innerPadding),
                         BringTextformfield(
-                          titleText: '프로젝트 설명',
-                          hintText: '프로젝트에 대해 설명해주세요 (200자 제한)',
+                          titleText: '내용',
+                          hintText: '궁금한 것에 대해 자유롭게 작성해주세요 (200자 제한)\n업황, 예산, 경험담 등에 대해 나눠보세요.',
                           maxLenth: 200,
                         ),
                         const SizedBox(height: AppConfig.innerPadding),
