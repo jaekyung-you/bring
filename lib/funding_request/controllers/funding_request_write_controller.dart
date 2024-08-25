@@ -1,8 +1,26 @@
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 import '../../common/bring_dialog.dart';
 
 class FundingRequestWriteController extends GetxController {
+  RxBool enableButton = false.obs;
+  TextEditingController titleTextController = TextEditingController();
+  TextEditingController contentTextController = TextEditingController();
+
+  @override
+  void onInit() {
+    super.onInit();
+    titleTextController.addListener(_checkEnableButton);
+    contentTextController.addListener(_checkEnableButton);
+  }
+
+
+  void _checkEnableButton() {
+    enableButton.value = titleTextController.text.trim().isNotEmpty &&
+        contentTextController.text.trim().isNotEmpty;
+  }
+
   void onTapRegisterButton() {
     Get.dialog(BringDialog.twoButton(
       title: '투자글을 등록할까요?',

@@ -26,7 +26,7 @@ class _FundingRequestWriteScreenState extends State<FundingRequestWriteScreen> {
         child: Column(
           children: [
             BringHeader(
-              title: '질문 작성',
+              title: '투자글 작성',
               rightButton: TextButton(
                 onPressed: () {
                   controller.onTapRegisterButton();
@@ -47,23 +47,20 @@ class _FundingRequestWriteScreenState extends State<FundingRequestWriteScreen> {
                   child: Column(
                     children: [
                       const SizedBox(height: AppConfig.innerPadding),
-                      const BringTextField(
+                      BringTextField(
+                        controller: controller.titleTextController,
                         titleText: '제목',
                         hintText: '제목을 입력해주세요 (20자 제한)',
                         maxLength: 20,
                       ),
                       const SizedBox(height: AppConfig.innerPadding),
                       BringTextformfield(
+                        controller: controller.contentTextController,
                         titleText: '내용',
                         hintText: '궁금한 것에 대해 자유롭게 작성해주세요 (200자 제한)\n업황, 예산, 경험담 등에 대해 나눠보세요.',
                         maxLenth: 200,
                       ),
                       const SizedBox(height: AppConfig.innerPadding),
-                      BringTextformfield(
-                        titleText: '내용',
-                        hintText: '궁금한 것에 대해 자유롭게 작성해주세요 (200자 제한)\n업황, 예산, 경험담 등에 대해 나눠보세요.',
-                        maxLenth: 200,
-                      ),
                       const SizedBox(height: AppConfig.innerPadding),
                       Text('이미지 첨부 기능'),
                       Container(
@@ -72,14 +69,17 @@ class _FundingRequestWriteScreenState extends State<FundingRequestWriteScreen> {
                             border: Border.all(color: BringColor.grey01), borderRadius: BorderRadius.circular(AppConfig.borderRadiusMain)),
                       ),
                       const SizedBox(height: AppConfig.innerPadding),
-                      BringRoundButton(
-                        buttonText: '등록하기',
-                        onPressed: () {
-                          // controller.onTapRegisterButton();
-                        },
-                        buttonBgColor: BringColor.primaryNavy,
-                        buttonFgColor: Colors.white,
-                      ),
+                      Obx(() {
+                        return BringRoundButton(
+                          buttonText: '등록하기',
+                          onPressed: () {
+                            // controller.onTapRegisterButton();
+                          },
+                          disabled: !controller.enableButton.value,
+                          buttonBgColor: BringColor.primaryNavy,
+                          buttonFgColor: Colors.white,
+                        );
+                      }),
                       const SizedBox(height: AppConfig.innerPadding * 2),
                     ],
                   ),

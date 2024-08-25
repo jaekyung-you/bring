@@ -22,11 +22,14 @@ class _MyProfileMainScreenState extends State<MyProfileMainScreen> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              BringProfileHeader(
-                imageUrl: 'https://picsum.photos/id/237/200/300',
-                nickname: '닉네임이에요',
-                width: 80,
-                height: 100,
+              Padding(
+                padding: const EdgeInsets.all(AppConfig.innerPadding),
+                child: BringProfileHeader(
+                  imageUrl: 'https://picsum.photos/id/237/200/300',
+                  nickname: '닉네임이에요',
+                  width: 60,
+                  height: 60,
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: AppConfig.innerPadding),
@@ -59,7 +62,12 @@ class _MyProfileMainScreenState extends State<MyProfileMainScreen> {
                       ],
                     ),
                     const SizedBox(height: AppConfig.innerPadding),
-                    Text('대화 중인 상대'),
+                    // Text('대화 중인 상대'),
+                    settingItem(
+                        title: '알림 설정',
+                        onPress: () {
+                          print("알림 설정");
+                        }),
                     settingItem(
                         title: '로그아웃',
                         onPress: () {

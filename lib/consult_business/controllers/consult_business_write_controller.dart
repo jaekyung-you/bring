@@ -6,6 +6,10 @@ import '../../data/response/filter_item.dart';
 class ConsultBusinessWriteController extends GetxController {
   RxList<FilterItem> categoryList = <FilterItem>[].obs;
   Rx<FilterItem> selectedCategory = FilterItem(title: '', code: '').obs;
+  TextEditingController titleTextController = TextEditingController();
+  TextEditingController contentTextController = TextEditingController();
+
+  RxBool enableButton = false.obs;
 
   @override
   void onInit() {
@@ -17,6 +21,14 @@ class ConsultBusinessWriteController extends GetxController {
       FilterItem(title: '팁', code: 'CB03'),
       FilterItem(title: '잡담', code: 'CB04'),
     ]);
+    titleTextController.addListener(checkEnableButton);
+    contentTextController.addListener(checkEnableButton);
+  }
+
+  void checkEnableButton() {
+    enableButton.value = titleTextController.text.trim().isNotEmpty &&
+        contentTextController.text.trim().isNotEmpty &&
+        selectedCategory.value.title.isNotEmpty;
   }
 
   void onTapRegisterButton() {

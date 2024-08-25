@@ -4,11 +4,18 @@ import 'package:flutter/material.dart';
 import '../const/bring_color.dart';
 
 class BringTextField extends StatefulWidget {
+  final TextEditingController controller;
   final String titleText;
   final String hintText;
   final int maxLength;
 
-  const BringTextField({super.key, required this.titleText, required this.hintText, required this.maxLength});
+  const BringTextField({
+    super.key,
+    required this.controller,
+    required this.titleText,
+    required this.hintText,
+    required this.maxLength,
+  });
 
   @override
   State<BringTextField> createState() => _BringTextFieldState();
@@ -20,6 +27,7 @@ class _BringTextFieldState extends State<BringTextField> {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      controller: widget.controller,
       maxLength: widget.maxLength,
       decoration: InputDecoration(
         counterText: '',

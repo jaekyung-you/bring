@@ -1,3 +1,4 @@
+import 'package:bring/const/bring_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../const/app_config.dart';
@@ -5,6 +6,7 @@ import '../const/app_config.dart';
 class BringRoundButton extends StatefulWidget {
   String buttonText;
   Function onPressed;
+  bool disabled;
   Color buttonFgColor;
   Color buttonBgColor;
   Color borderColor;
@@ -21,6 +23,7 @@ class BringRoundButton extends StatefulWidget {
     required this.onPressed,
     required this.buttonFgColor,
     required this.buttonBgColor,
+    this.disabled = false,
     this.borderColor = Colors.transparent,
     this.borderRadius,
     this.width = double.maxFinite,
@@ -63,6 +66,7 @@ class _BringRoundButtonState extends State<BringRoundButton> with SingleTickerPr
 
   void _onTapUp(TapUpDetails details) {
     _controller.reverse();
+    if (widget.disabled) return;
     widget.onPressed();
   }
 
@@ -83,7 +87,7 @@ class _BringRoundButtonState extends State<BringRoundButton> with SingleTickerPr
           alignment: Alignment.center,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(widget.borderRadius ?? AppConfig.borderRadiusMain),
-            color: widget.buttonBgColor,
+            color: widget.disabled ? BringColor.grey03 : widget.buttonBgColor,
             border: Border.all(color: widget.borderColor, width: widget.borderWidth),
           ),
           child: Row(

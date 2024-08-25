@@ -48,7 +48,8 @@ class _ConsultBusinessWriteScreenState extends State<ConsultBusinessWriteScreen>
                   child: Column(
                     children: [
                       const SizedBox(height: AppConfig.innerPadding),
-                      const BringTextField(
+                      BringTextField(
+                        controller: controller.titleTextController,
                         titleText: '제목',
                         hintText: '제목을 입력해주세요 (20자 제한)',
                         maxLength: 20,
@@ -59,7 +60,7 @@ class _ConsultBusinessWriteScreenState extends State<ConsultBusinessWriteScreen>
                           int selectedIndex = 0;
                           int initialIndex = controller.categoryList.indexOf(controller.selectedCategory.value);
                           final FixedExtentScrollController pickerController =
-                              FixedExtentScrollController(initialItem: initialIndex); // 초기 인덱스 설정
+                          FixedExtentScrollController(initialItem: initialIndex); // 초기 인덱스 설정
 
                           Get.bottomSheet(
                             BringBottomSheet(
@@ -75,17 +76,18 @@ class _ConsultBusinessWriteScreenState extends State<ConsultBusinessWriteScreen>
                                       selectedIndex = index;
                                     },
                                     children: controller.categoryList
-                                        .map((item) => Center(
-                                              child: Text(
-                                                item.title,
-                                                style: TextStyle(fontSize: 14.sp),
-                                              ),
-                                            ))
+                                        .map((item) =>
+                                        Center(
+                                          child: Text(
+                                            item.title,
+                                            style: TextStyle(fontSize: 14.sp),
+                                          ),
+                                        ))
                                         .toList()),
                               ),
                               onPressed: () {
                                 controller.selectedCategory.value = controller.categoryList[selectedIndex];
-                                print(controller.selectedCategory.value);
+                                controller.checkEnableButton();
                                 Get.back();
                               },
                             ),
@@ -119,6 +121,7 @@ class _ConsultBusinessWriteScreenState extends State<ConsultBusinessWriteScreen>
                       ),
                       const SizedBox(height: AppConfig.innerPadding),
                       BringTextformfield(
+                        controller: controller.contentTextController,
                         titleText: '내용',
                         hintText: '궁금한 것에 대해 자유롭게 작성해주세요 (200자 제한)\n업황, 예산, 경험담 등에 대해 나눠보세요.',
                         maxLenth: 200,
@@ -132,14 +135,17 @@ class _ConsultBusinessWriteScreenState extends State<ConsultBusinessWriteScreen>
                             borderRadius: BorderRadius.circular(AppConfig.borderRadiusMain)),
                       ),
                       const SizedBox(height: AppConfig.innerPadding),
-                      BringRoundButton(
-                        buttonText: '등록하기',
-                        onPressed: () {
-                          controller.onTapRegisterButton();
-                        },
-                        buttonBgColor: BringColor.primaryNavy,
-                        buttonFgColor: Colors.white,
-                      ),
+                      Obx(() {
+                        return BringRoundButton(
+                          buttonText: '등록하기',
+                          disabled: !controller.enableButton.value,
+                          onPressed: () {
+                            controller.onTapRegisterButton();
+                          },
+                          buttonBgColor: BringColor.primaryNavy,
+                          buttonFgColor: Colors.white,
+                        );
+                      }),
                       const SizedBox(height: AppConfig.innerPadding * 2),
                     ],
                   ),

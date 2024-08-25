@@ -1,7 +1,19 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../common/bring_dialog.dart';
 
 class IdeaWriteController extends GetxController {
+  TextEditingController titleTextController = TextEditingController();
+  TextEditingController contentTextController = TextEditingController();
+  TextEditingController goalTextController = TextEditingController();
+  TextEditingController progressTextController = TextEditingController();
+  TextEditingController memberTextController = TextEditingController();
+  TextEditingController recruitTextController = TextEditingController();
+  TextEditingController placeTextController = TextEditingController();
+  TextEditingController etcTextController = TextEditingController();
+
+
+
   void onTapRegisterButton() {
     Get.dialog(BringDialog.twoButton(
       title: '소중한 사업 아이디어를 등할까요?',

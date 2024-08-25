@@ -4,11 +4,18 @@ import '../const/app_config.dart';
 import '../const/bring_color.dart';
 
 class BringTextformfield extends StatefulWidget {
+  final TextEditingController controller;
   final String titleText;
   final String hintText;
   final int maxLenth;
 
-  const BringTextformfield({super.key, required this.titleText, required this.hintText, required this.maxLenth});
+  const BringTextformfield({
+    super.key,
+    required this.controller,
+    required this.titleText,
+    required this.hintText,
+    required this.maxLenth,
+  });
 
   @override
   State<BringTextformfield> createState() => _BringTextformfieldState();
@@ -20,6 +27,7 @@ class _BringTextformfieldState extends State<BringTextformfield> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: widget.controller,
       maxLines: 5, // 여러 줄 입력 가능
       decoration: InputDecoration(
         hintText: widget.hintText,
