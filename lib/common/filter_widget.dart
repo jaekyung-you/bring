@@ -1,15 +1,15 @@
 import 'package:bring/common/bouncing_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../const/app_config.dart';
-import '../../const/bring_color.dart';
-import '../../data/response/consult_business_filter.dart';
+import '../const/app_config.dart';
+import '../const/bring_color.dart';
+import '../data/response/filter_item.dart';
 
-class ConsultBusinessFilterWidget extends StatelessWidget {
-  final List<ConsultBusinessFilter> filterList;
-  final Rx<ConsultBusinessFilter> selectedFilter;
+class FilterWidget extends StatelessWidget {
+  final List<FilterItem> filterList;
+  final Rx<FilterItem> selectedFilter;
 
-  const ConsultBusinessFilterWidget({super.key, required this.filterList, required this.selectedFilter});
+  const FilterWidget({super.key, required this.filterList, required this.selectedFilter});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class ConsultBusinessFilterWidget extends StatelessWidget {
                   return BouncingWidget(
                     onPressed: () {
                       if (selectedFilter.value == filterList[i]) {
-                        selectedFilter.value = ConsultBusinessFilter(title: '', code: '');
+                        selectedFilter.value = FilterItem(title: '', code: '');
                       } else {
                         selectedFilter.value = filterList[i];
                       }

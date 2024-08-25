@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'consult_business_filter.dart';
+part of 'filter_item.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,47 +14,45 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-ConsultBusinessFilter _$ConsultBusinessFilterFromJson(
-    Map<String, dynamic> json) {
-  return _ConsultBusinessFilter.fromJson(json);
+FilterItem _$FilterItemFromJson(Map<String, dynamic> json) {
+  return _FilterItem.fromJson(json);
 }
 
 /// @nodoc
-mixin _$ConsultBusinessFilter {
+mixin _$FilterItem {
   String get title => throw _privateConstructorUsedError;
   String get code => throw _privateConstructorUsedError;
 
-  /// Serializes this ConsultBusinessFilter to a JSON map.
+  /// Serializes this FilterItem to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-  /// Create a copy of ConsultBusinessFilter
+  /// Create a copy of FilterItem
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $ConsultBusinessFilterCopyWith<ConsultBusinessFilter> get copyWith =>
+  $FilterItemCopyWith<FilterItem> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ConsultBusinessFilterCopyWith<$Res> {
-  factory $ConsultBusinessFilterCopyWith(ConsultBusinessFilter value,
-          $Res Function(ConsultBusinessFilter) then) =
-      _$ConsultBusinessFilterCopyWithImpl<$Res, ConsultBusinessFilter>;
+abstract class $FilterItemCopyWith<$Res> {
+  factory $FilterItemCopyWith(
+          FilterItem value, $Res Function(FilterItem) then) =
+      _$FilterItemCopyWithImpl<$Res, FilterItem>;
   @useResult
   $Res call({String title, String code});
 }
 
 /// @nodoc
-class _$ConsultBusinessFilterCopyWithImpl<$Res,
-        $Val extends ConsultBusinessFilter>
-    implements $ConsultBusinessFilterCopyWith<$Res> {
-  _$ConsultBusinessFilterCopyWithImpl(this._value, this._then);
+class _$FilterItemCopyWithImpl<$Res, $Val extends FilterItem>
+    implements $FilterItemCopyWith<$Res> {
+  _$FilterItemCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of ConsultBusinessFilter
+  /// Create a copy of FilterItem
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -76,27 +74,25 @@ class _$ConsultBusinessFilterCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$ConsultBusinessFilterImplCopyWith<$Res>
-    implements $ConsultBusinessFilterCopyWith<$Res> {
-  factory _$$ConsultBusinessFilterImplCopyWith(
-          _$ConsultBusinessFilterImpl value,
-          $Res Function(_$ConsultBusinessFilterImpl) then) =
-      __$$ConsultBusinessFilterImplCopyWithImpl<$Res>;
+abstract class _$$FilterItemImplCopyWith<$Res>
+    implements $FilterItemCopyWith<$Res> {
+  factory _$$FilterItemImplCopyWith(
+          _$FilterItemImpl value, $Res Function(_$FilterItemImpl) then) =
+      __$$FilterItemImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String title, String code});
 }
 
 /// @nodoc
-class __$$ConsultBusinessFilterImplCopyWithImpl<$Res>
-    extends _$ConsultBusinessFilterCopyWithImpl<$Res,
-        _$ConsultBusinessFilterImpl>
-    implements _$$ConsultBusinessFilterImplCopyWith<$Res> {
-  __$$ConsultBusinessFilterImplCopyWithImpl(_$ConsultBusinessFilterImpl _value,
-      $Res Function(_$ConsultBusinessFilterImpl) _then)
+class __$$FilterItemImplCopyWithImpl<$Res>
+    extends _$FilterItemCopyWithImpl<$Res, _$FilterItemImpl>
+    implements _$$FilterItemImplCopyWith<$Res> {
+  __$$FilterItemImplCopyWithImpl(
+      _$FilterItemImpl _value, $Res Function(_$FilterItemImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ConsultBusinessFilter
+  /// Create a copy of FilterItem
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -104,7 +100,7 @@ class __$$ConsultBusinessFilterImplCopyWithImpl<$Res>
     Object? title = null,
     Object? code = null,
   }) {
-    return _then(_$ConsultBusinessFilterImpl(
+    return _then(_$FilterItemImpl(
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -119,11 +115,11 @@ class __$$ConsultBusinessFilterImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ConsultBusinessFilterImpl implements _ConsultBusinessFilter {
-  _$ConsultBusinessFilterImpl({required this.title, required this.code});
+class _$FilterItemImpl implements _FilterItem {
+  _$FilterItemImpl({required this.title, required this.code});
 
-  factory _$ConsultBusinessFilterImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ConsultBusinessFilterImplFromJson(json);
+  factory _$FilterItemImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FilterItemImplFromJson(json);
 
   @override
   final String title;
@@ -132,14 +128,14 @@ class _$ConsultBusinessFilterImpl implements _ConsultBusinessFilter {
 
   @override
   String toString() {
-    return 'ConsultBusinessFilter(title: $title, code: $code)';
+    return 'FilterItem(title: $title, code: $code)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ConsultBusinessFilterImpl &&
+            other is _$FilterItemImpl &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.code, code) || other.code == code));
   }
@@ -148,40 +144,39 @@ class _$ConsultBusinessFilterImpl implements _ConsultBusinessFilter {
   @override
   int get hashCode => Object.hash(runtimeType, title, code);
 
-  /// Create a copy of ConsultBusinessFilter
+  /// Create a copy of FilterItem
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$ConsultBusinessFilterImplCopyWith<_$ConsultBusinessFilterImpl>
-      get copyWith => __$$ConsultBusinessFilterImplCopyWithImpl<
-          _$ConsultBusinessFilterImpl>(this, _$identity);
+  _$$FilterItemImplCopyWith<_$FilterItemImpl> get copyWith =>
+      __$$FilterItemImplCopyWithImpl<_$FilterItemImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ConsultBusinessFilterImplToJson(
+    return _$$FilterItemImplToJson(
       this,
     );
   }
 }
 
-abstract class _ConsultBusinessFilter implements ConsultBusinessFilter {
-  factory _ConsultBusinessFilter(
+abstract class _FilterItem implements FilterItem {
+  factory _FilterItem(
       {required final String title,
-      required final String code}) = _$ConsultBusinessFilterImpl;
+      required final String code}) = _$FilterItemImpl;
 
-  factory _ConsultBusinessFilter.fromJson(Map<String, dynamic> json) =
-      _$ConsultBusinessFilterImpl.fromJson;
+  factory _FilterItem.fromJson(Map<String, dynamic> json) =
+      _$FilterItemImpl.fromJson;
 
   @override
   String get title;
   @override
   String get code;
 
-  /// Create a copy of ConsultBusinessFilter
+  /// Create a copy of FilterItem
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ConsultBusinessFilterImplCopyWith<_$ConsultBusinessFilterImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$FilterItemImplCopyWith<_$FilterItemImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../../common/filter_widget.dart';
+import '../../const/app_config.dart';
+import '../../const/bring_color.dart';
+import '../controllers/funding_reqeust_main_controller.dart';
 
 class FundingRequestMainScreen extends StatefulWidget {
   const FundingRequestMainScreen({super.key});
@@ -8,14 +14,26 @@ class FundingRequestMainScreen extends StatefulWidget {
 }
 
 class _FundingRequestMainScreenState extends State<FundingRequestMainScreen> {
+  FundingRequestMainController controller = Get.put(FundingRequestMainController());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-          child: Column(
-        children: [],
-
-      ),),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Padding(
+              padding: const EdgeInsets.symmetric(vertical: AppConfig.contentPadding, horizontal: AppConfig.innerPadding),
+              child: Text(
+                '투자 구해요',
+                style: TextStyle(fontWeight: FontWeight.w700, color: BringColor.primaryNavy, fontSize: 24),
+              ),
+            ),
+            FilterWidget(filterList: controller.filterList, selectedFilter: controller.selectedFilter),
+          ],
+        ),
+      ),
     );
   }
 }

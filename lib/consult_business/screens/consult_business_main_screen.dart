@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 
 import '../../const/app_config.dart';
 import '../../const/bring_color.dart';
-import '../widgets/consult_business_filter_widget.dart';
+import '../../common/filter_widget.dart';
 import '../widgets/consult_business_list_item.dart';
 import '../widgets/consult_business_write_button.dart';
 
@@ -34,7 +34,7 @@ class _ConsultBusinessMainScreenState extends State<ConsultBusinessMainScreen> {
                 style: TextStyle(fontWeight: FontWeight.w700, color: BringColor.primaryNavy, fontSize: 24),
               ),
             ),
-            ConsultBusinessFilterWidget(filterList: controller.filterList, selectedFilter: controller.selectedFilter),
+            FilterWidget(filterList: controller.filterList, selectedFilter: controller.selectedFilter),
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: AppConfig.innerPadding),

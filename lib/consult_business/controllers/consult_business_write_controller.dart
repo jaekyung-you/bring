@@ -1,21 +1,21 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import '../../common/bring_dialog.dart';
-import '../../data/response/consult_business_filter.dart';
+import '../../data/response/filter_item.dart';
 
 class ConsultBusinessWriteController extends GetxController {
-  RxList<ConsultBusinessFilter> categoryList = <ConsultBusinessFilter>[].obs;
-  Rx<ConsultBusinessFilter> selectedCategory = ConsultBusinessFilter(title: '', code: '').obs;
+  RxList<FilterItem> categoryList = <FilterItem>[].obs;
+  Rx<FilterItem> selectedCategory = FilterItem(title: '', code: '').obs;
 
   @override
   void onInit() {
     super.onInit();
     // todo: 서버에서 fetch
     categoryList.addAll([
-      ConsultBusinessFilter(title: '고민상담', code: 'CB01'),
-      ConsultBusinessFilter(title: '업황', code: 'CB02'),
-      ConsultBusinessFilter(title: '팁', code: 'CB03'),
-      ConsultBusinessFilter(title: '잡담', code: 'CB04'),
+      FilterItem(title: '고민상담', code: 'CB01'),
+      FilterItem(title: '업황', code: 'CB02'),
+      FilterItem(title: '팁', code: 'CB03'),
+      FilterItem(title: '잡담', code: 'CB04'),
     ]);
   }
 

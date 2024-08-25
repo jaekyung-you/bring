@@ -1,20 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'consult_business_filter.dart';
+part of 'filter_item.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ConsultBusinessFilterImpl _$$ConsultBusinessFilterImplFromJson(
-        Map<String, dynamic> json) =>
-    _$ConsultBusinessFilterImpl(
+_$FilterItemImpl _$$FilterItemImplFromJson(Map<String, dynamic> json) =>
+    _$FilterItemImpl(
       title: json['title'] as String,
       code: json['code'] as String,
     );
 
-Map<String, dynamic> _$$ConsultBusinessFilterImplToJson(
-        _$ConsultBusinessFilterImpl instance) =>
+Map<String, dynamic> _$$FilterItemImplToJson(_$FilterItemImpl instance) =>
     <String, dynamic>{
       'title': instance.title,
       'code': instance.code,
