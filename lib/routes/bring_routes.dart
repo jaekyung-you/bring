@@ -1,3 +1,6 @@
+import 'package:bring/funding_request/screens/funding_request_detail_screen.dart';
+import 'package:bring/funding_request/screens/funding_request_main_screen.dart';
+import 'package:bring/funding_request/screens/funding_request_write_screen.dart';
 import 'package:bring/main.dart';
 import 'package:bring/my_profile/screens/login_screen.dart';
 import 'package:bring/my_profile/screens/my_profile_edit_screen.dart';
@@ -34,6 +37,10 @@ class BringRoutes {
     GetPage(name: BringPath.CONSULT_BUSINESS, page: () => const ConsultBusinessMainScreen()),
     GetPage(name: BringPath.CONSULT_BUSINESS_DETAIL, page: () => const ConsultBusinessDetailScreen()),
     GetPage(name: BringPath.CONSULT_BUSINESS_WRITE, page: () => const ConsultBusinessWriteScreen()),
+
+    GetPage(name: BringPath.FUNDING_REQUEST, page: () => const FundingRequestMainScreen()),
+    GetPage(name: BringPath.FUNDING_REQUEST_DETAIL, page: () => const FundingRequestDetailScreen()),
+    GetPage(name: BringPath.FUNDING_REQUEST_WRITE, page: () => const FundingRequestWriteScreen()),
 
     GetPage(name: BringPath.LOGIN, page: () => const LoginScreen()),
 

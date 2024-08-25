@@ -12,6 +12,10 @@ class BringPath {
   static const CONSULT_BUSINESS_DETAIL = '/consult_business/detail'; // 자문 구해요 > 상세화면
   static const CONSULT_BUSINESS_WRITE = '/consult_business/write'; // 자문 구해요 > 작성화면
 
+  static const FUNDING_REQUEST = '/funding_request'; // 투자 구해요
+  static const FUNDING_REQUEST_DETAIL = '/funding_request/detail'; // 투자 구해요 > 상세화면
+  static const FUNDING_REQUEST_WRITE = '/funding_request/write'; // 투자 구해요 > 작성화면
+
   static const LOGIN = '/login'; // 아이디어 작성화면
 
   static const MY_PROFILE = '/my_profile'; // 마이 프로필

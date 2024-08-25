@@ -10,6 +10,12 @@ class FundingRequestMainScreen extends StatefulWidget {
 class _FundingRequestMainScreenState extends State<FundingRequestMainScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: SafeArea(
+          child: Column(
+        children: [],
+
+      ),),
+    );
   }
 }

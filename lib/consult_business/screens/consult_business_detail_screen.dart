@@ -81,15 +81,17 @@ class _ConsultBusinessDetailScreenState extends State<ConsultBusinessDetailScree
                               shrinkWrap: true,
                               itemCount: controller.testReplies.length,
                               itemBuilder: (context, index) {
-                                return BringReplyWidget(
-                                  reply: controller.testReplies[index],
-                                  onTapReply: () {
-                                    controller.onTapReply(index);
-                                  },
-                                  onTapLike: () {
-                                    controller.toggleLikeButton();
-                                  },
-                                );
+                                return GetBuilder<ConsultBusinessDetailController>(builder: (controller) {
+                                  return BringReplyWidget(
+                                    reply: controller.testReplies[index],
+                                    onTapReply: () {
+                                      controller.onTapReply(index);
+                                    },
+                                    onTapLike: () {
+                                      controller.toggleLikeButton(controller.testReplies[index].id);
+                                    },
+                                  );
+                                });
                               })
                         ],
                       ),

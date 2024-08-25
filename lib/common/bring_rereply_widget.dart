@@ -15,10 +15,9 @@ class BringRereplyWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: AppConfig.innerPadding),
-      color: Colors.white.withOpacity(0.5),
+      padding: const EdgeInsets.symmetric(horizontal: AppConfig.innerPadding, vertical: AppConfig.contentPadding),
+      color: Colors.white.withOpacity(0.3),
       width: Get.width,
-      height: 52,
       child: Row(
         children: [
           Expanded(

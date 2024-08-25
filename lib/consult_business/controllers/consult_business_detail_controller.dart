@@ -90,16 +90,17 @@ class ConsultBusinessDetailController extends GetxController {
   ];
 
   void onTapReply(int index) {
-    // replyTextController.setTag(nickname);
     showReplyField.value = true;
     replyNickname.value = testReplies[index].nickname;
     replyContent.value = testReplies[index].content;
   }
 
-  void toggleLikeButton() {
-    // todo: api 호출
-
-    isLiked.value = !isLiked.value;
-    // list[index].isLiked.value = !list[index].isLiked.value;
+  void toggleLikeButton(int id) {
+    // todo: api 호출 -> 반환값은 업데이트된 response -> UI 교체
+    bool apiSuccess = true;
+    if (apiSuccess) {
+    } else {}
+    // 성공하면 리스트 수동업데이트해서 교체
+    update();
   }
 }
