@@ -1,26 +1,27 @@
 import 'package:bring/common/circle_image_widget.dart';
 import 'package:bring/const/app_config.dart';
+import 'package:bring/const/bring_color.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../data/response/reply_response.dart';
 
 class BringReplyWidget extends StatelessWidget {
-  final bool isRereply; // 대댓글
+  final ReplyResponse reply;
+  final Function onTapReply;
+  final Function onTapLike;
 
-  const BringReplyWidget({super.key, this.isRereply = false});
+  const BringReplyWidget({super.key, required this.reply, required this.onTapReply, required this.onTapLike});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: Get.width,
       padding: const EdgeInsets.symmetric(vertical: AppConfig.contentPadding),
-      color: Colors.blue,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          if (isRereply == true)
-            const SizedBox(width: AppConfig.innerPadding * 2),
-
-          CircleImageWidget(imageUrl: '', width: 40),
+          if (reply.isRereply == true) const SizedBox(width: AppConfig.innerPadding * 2),
+          CircleImageWidget(imageUrl: reply.profileImage, width: 40),
           const SizedBox(width: AppConfig.contentPadding),
           Expanded(
             child: Column(
@@ -28,29 +29,25 @@ class BringReplyWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  '닉네임이야',
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700),
+                  reply.nickname,
+                  style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w700),
                 ),
-                Center(
-                  child: Text(
-                    '댓글입니다. 댓글입니다. 댓글입니다. 댓글입니다. 댓글입니다. 댓글입니다. 댓글입니다. 댓글입니다.',
-                    style: TextStyle(fontSize: 12),
-                  ),
+                Text(
+                  reply.content,
+                  // textAlign: TextAlign.left,
+                  style: const TextStyle(fontSize: 12,),
                 ),
                 Row(
                   children: [
-                    Spacer(),
-                    InkWell(
-                      onTap: () {},
-                      child: Row(
-                        children: [
-                          Icon(Icons.reply),
-                          const SizedBox(width: 4),
-                          Icon(Icons.thumb_up_sharp),
-                          const SizedBox(width: 4),
-                          Text('10'),
-                        ],
-                      ),
+                    const Spacer(),
+                    Row(
+                      children: [
+                        replyButton(),
+                        const SizedBox(width: AppConfig.contentPadding),
+                        likeButton(),
+                        const SizedBox(width: 4),
+                        Text('${reply.likeCount}'),
+                      ],
                     ),
                     const SizedBox(width: 4),
                   ],
@@ -59,6 +56,33 @@ class BringReplyWidget extends StatelessWidget {
             ),
           )
         ],
+      ),
+    );
+  }
+
+  Widget replyButton() {
+    return InkWell(
+      onTap: () {
+        // todo: 추후 해시태그 기능
+        onTapReply();
+      },
+      child: Icon(
+        Icons.reply,
+        size: 20,
+        color: BringColor.grey02,
+      ),
+    );
+  }
+
+  Widget likeButton() {
+    return InkWell(
+      onTap: () {
+        onTapLike();
+      },
+      child: Icon(
+        Icons.thumb_up_sharp,
+        color: reply.isLiked ? BringColor.red : BringColor.grey02,
+        size: 20,
       ),
     );
   }

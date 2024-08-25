@@ -5,6 +5,7 @@ import '../../common/bring_header.dart';
 import '../../common/bring_profile_header.dart';
 import '../../common/bring_reply_textfield.dart';
 import '../../common/bring_reply_widget.dart';
+import '../../common/bring_rereply_widget.dart';
 import '../../common/divider_widget.dart';
 import '../../const/app_config.dart';
 import '../controllers/consult_business_detail_controller.dart';
@@ -74,12 +75,21 @@ class _ConsultBusinessDetailScreenState extends State<ConsultBusinessDetailScree
                             '댓글 n개',
                             style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18),
                           ),
+                          const SizedBox(height: AppConfig.innerPadding),
                           ListView.builder(
                               physics: NeverScrollableScrollPhysics(),
                               shrinkWrap: true,
-                              itemCount: 10,
+                              itemCount: controller.testReplies.length,
                               itemBuilder: (context, index) {
-                                return BringReplyWidget(isRereply: index % 2 == 0);
+                                return BringReplyWidget(
+                                  reply: controller.testReplies[index],
+                                  onTapReply: () {
+                                    controller.onTapReply(index);
+                                  },
+                                  onTapLike: () {
+                                    controller.toggleLikeButton();
+                                  },
+                                );
                               })
                         ],
                       ),
@@ -88,6 +98,17 @@ class _ConsultBusinessDetailScreenState extends State<ConsultBusinessDetailScree
                 ),
               ),
             ),
+            Obx(() {
+              return controller.showReplyField.value
+                  ? BringRereplyWidget(
+                      nickname: controller.replyNickname.value,
+                      content: controller.replyContent.value,
+                      onTapClose: () {
+                        controller.showReplyField.value = false;
+                      },
+                    )
+                  : const SizedBox.shrink();
+            }),
             BringReplyTextField(
               controller: controller.replyTextController,
               hintText: '댓글을 달아보세요.',
