@@ -6,6 +6,7 @@ import '../../const/app_config.dart';
 import '../../const/bring_color.dart';
 import '../controllers/funding_reqeust_main_controller.dart';
 import '../widgets/funding_request_list_item.dart';
+import '../widgets/funding_request_write_button.dart';
 
 class FundingRequestMainScreen extends StatefulWidget {
   const FundingRequestMainScreen({super.key});
@@ -20,6 +21,7 @@ class _FundingRequestMainScreenState extends State<FundingRequestMainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FundingRequestWriteButton(),
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
