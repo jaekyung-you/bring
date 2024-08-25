@@ -5,6 +5,7 @@ import '../../common/filter_widget.dart';
 import '../../const/app_config.dart';
 import '../../const/bring_color.dart';
 import '../controllers/funding_reqeust_main_controller.dart';
+import '../widgets/funding_request_list_item.dart';
 
 class FundingRequestMainScreen extends StatefulWidget {
   const FundingRequestMainScreen({super.key});
@@ -31,6 +32,20 @@ class _FundingRequestMainScreenState extends State<FundingRequestMainScreen> {
               ),
             ),
             FilterWidget(filterList: controller.filterList, selectedFilter: controller.selectedFilter),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: AppConfig.innerPadding),
+                child: ListView.separated(
+                    shrinkWrap: true,
+                    itemCount: 10,
+                    separatorBuilder: (context, index) {
+                      return const SizedBox(height: AppConfig.innerPadding);
+                    },
+                    itemBuilder: (context, index) {
+                      return FilterRequestListItem();
+                    }),
+              ),
+            )
           ],
         ),
       ),
